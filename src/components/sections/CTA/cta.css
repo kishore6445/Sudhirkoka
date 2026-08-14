@@ -1,0 +1,391 @@
+/* =========================================================
+   FINAL CTA SECTION
+========================================================= */
+
+.cta-section {
+    position: relative;
+
+    width: 100%;
+
+    padding: 82px 0 88px;
+
+    background: #102a43;
+
+    color: #ffffff;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.cta-container {
+    position: relative;
+
+    width: min(1200px, calc(100% - 64px));
+
+    min-height: 300px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.cta-content {
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 760px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.cta-eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 8px 17px;
+
+    border:
+        1px solid rgba(212, 175, 55, 0.35);
+
+    border-radius: 999px;
+
+    background:
+        rgba(212, 175, 55, 0.07);
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.cta-heading {
+    margin: 20px 0 0;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(42px, 4vw, 56px);
+
+    font-weight: 700;
+
+    line-height: 1.02;
+
+    letter-spacing: -0.032em;
+
+    color: #ffffff;
+}
+
+.cta-heading span {
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.cta-description {
+    max-width: 610px;
+
+    margin: 19px auto 0;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 400;
+
+    line-height: 1.7;
+
+    color:
+        #617786;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.cta-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    min-width: 145px;
+
+    height: 48px;
+
+    margin-top: 27px;
+
+    padding: 0 23px;
+
+    border-radius: 7px;
+
+    background: #d4af37;
+
+    color: #102a43;
+
+    text-decoration: none;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.cta-button:hover {
+    background: #e0b83d;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================================
+   DECORATIVE CIRCLES
+========================================================= */
+
+.cta-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+/* Left circle */
+
+.cta-circle--one {
+    width: 340px;
+    height: 340px;
+
+    left: -180px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border:
+        1px solid rgba(212, 175, 55, 0.16);
+
+    box-shadow:
+        inset 0 0 0 12px rgba(212, 175, 55, 0.025),
+        inset 0 0 0 28px rgba(212, 175, 55, 0.018);
+}
+
+
+/* Right circle */
+
+.cta-circle--two {
+    width: 270px;
+    height: 270px;
+
+    right: -120px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    border:
+        1px solid rgba(248, 244, 234, 0.08);
+}
+
+
+/* =========================================================
+   SMALL GOLD DOT
+========================================================= */
+
+.cta-container::before {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    top: 30px;
+    left: 20%;
+
+    border-radius: 50%;
+
+    background: #d4af37;
+
+    opacity: 0.7;
+}
+
+.cta-container::after {
+    content: "";
+
+    position: absolute;
+
+    width: 6px;
+    height: 6px;
+
+    right: 20%;
+    bottom: 25px;
+
+    border-radius: 50%;
+
+    background: #d4af37;
+
+    opacity: 0.45;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .cta-section {
+        padding: 72px 0 78px;
+    }
+
+    .cta-container {
+        width: calc(100% - 40px);
+
+        min-height: 280px;
+    }
+
+    .cta-circle--one {
+        left: -220px;
+    }
+
+    .cta-circle--two {
+        right: -180px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .cta-section {
+        padding: 62px 0 68px;
+    }
+
+    .cta-container {
+        width: calc(100% - 32px);
+
+        min-height: 270px;
+    }
+
+    .cta-heading {
+        font-size: 40px;
+
+        line-height: 1.03;
+    }
+
+    .cta-description {
+        max-width: 390px;
+
+        font-size: 13px;
+
+        line-height: 1.65;
+    }
+
+    .cta-button {
+        height: 46px;
+
+        min-width: 140px;
+
+        margin-top: 24px;
+    }
+
+    .cta-circle--one {
+        width: 240px;
+        height: 240px;
+
+        left: -170px;
+    }
+
+    .cta-circle--two {
+        width: 210px;
+        height: 210px;
+
+        right: -150px;
+    }
+
+    .cta-container::before {
+        left: 10%;
+
+        top: 22px;
+    }
+
+    .cta-container::after {
+        right: 10%;
+
+        bottom: 18px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .cta-heading {
+        font-size: 36px;
+    }
+
+    .cta-description {
+        font-size: 12.5px;
+    }
+}

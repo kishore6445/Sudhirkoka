@@ -1,0 +1,1749 @@
+/* =========================================================
+   INSIGHTS SECTION
+========================================================= */
+
+.insights-section {
+    width: 100%;
+
+    background: #ffffff;
+
+    padding: 100px 0 120px;
+
+    overflow: hidden;
+}
+
+
+.insights-container {
+    width: min(1200px, calc(100% - 64px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.insights-header {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) auto;
+
+    align-items: end;
+
+    gap: 50px;
+
+    padding-bottom: 42px;
+
+    border-bottom: 1px solid #e2e7eb;
+}
+
+
+.insights-header-main {
+    max-width: 900px;
+}
+
+
+/* =========================================================
+   SECTION EYEBROW
+========================================================= */
+
+.section-eyebrow {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    margin: 0 0 30px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2em;
+
+    text-transform: uppercase;
+
+    color: #0a2744;
+}
+
+
+.section-eyebrow span:first-child {
+    color: #cda52d;
+}
+
+
+.section-eyebrow i {
+    display: block;
+
+    width: 42px;
+
+    height: 2px;
+
+    background: #cda52d;
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.insights-heading {
+    margin: 0;
+
+    max-width: 1000px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(40px, 4vw, 56px);
+
+    line-height: 1.05;
+
+    letter-spacing: -0.035em;
+
+    font-weight: 700;
+
+    color: #09223d;
+}
+
+
+.insights-heading span {
+    color: #d2a72c;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.insights-description {
+    max-width: 800px;
+
+    margin: 24px 0 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    font-weight: 500;
+
+    color: #647c92;
+}
+
+
+/* =========================================================
+   HEADER ACTION
+========================================================= */
+
+.insights-header-action {
+    padding-bottom: 4px;
+}
+
+
+/*
+   Your JSX currently uses a button.
+   We style both button and anchor so either works.
+*/
+
+.insights-header-action button,
+.insights-header-action a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin: 0;
+
+    padding: 0 0 11px;
+
+    border: 0;
+
+    border-bottom: 2px solid #d2a72c;
+
+    background: transparent;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    color: #09223d;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.insights-header-action button:hover,
+.insights-header-action a:hover {
+    gap: 17px;
+
+    color: #c59720;
+
+    text-decoration: none;
+}
+
+
+.insights-header-action svg {
+    flex-shrink: 0;
+}
+
+
+/* =========================================================
+   INSIGHTS TABS WRAPPER
+========================================================= */
+
+.insight-tabs-wrapper {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 42px 0 38px;
+}
+
+
+/* =========================================================
+   TABS CONTAINER
+========================================================= */
+
+.insight-tabs {
+    width: 100%;
+
+    max-width: 930px;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    align-items: stretch;
+
+    gap: 0;
+
+    padding: 6px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e7ec;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 12px 32px rgba(9, 34, 61, 0.06);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   TAB LINK
+========================================================= */
+
+.insight-tab {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 11px;
+
+    min-width: 0;
+
+    height: 58px;
+
+    margin: 0;
+
+    padding: 0 20px;
+
+    border: 1px solid transparent;
+
+    border-radius: 11px;
+
+    background: transparent;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 750;
+
+    line-height: 1;
+
+    color: #647b90;
+
+    text-decoration: none !important;
+
+    cursor: pointer;
+
+    box-sizing: border-box;
+
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================================
+   REMOVE DEFAULT LINK STATES
+========================================================= */
+
+.insight-tab:link,
+.insight-tab:visited,
+.insight-tab:hover,
+.insight-tab:active {
+    text-decoration: none !important;
+}
+
+
+/* =========================================================
+   TAB ICON
+========================================================= */
+
+.insight-tab-icon {
+    flex-shrink: 0;
+
+    color: #6f879b;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================================
+   TAB HOVER
+========================================================= */
+
+.insight-tab:hover {
+    color: #09223d;
+
+    background: #f7f9fa;
+
+    transform: translateY(-1px);
+
+    text-decoration: none !important;
+}
+
+
+.insight-tab:hover .insight-tab-icon {
+    color: #d2a72c;
+
+    transform: translateY(-1px);
+}
+
+
+/*
+   IMPORTANT:
+   There is intentionally NO .active styling.
+
+   The /insights landing page is an overview page.
+   All four categories remain visually neutral.
+*/
+
+
+/* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+.insights-content {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.72fr) minmax(340px, 0.9fr);
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+.insights-video-area {
+    width: 100%;
+
+    min-width: 0;
+
+    display: block;
+}
+
+
+/* =========================================================
+   VIDEO CARD — BASE
+========================================================= */
+
+.insight-video-card {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border: 1px solid #e1e7ec;
+
+    border-radius: 18px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 12px 32px rgba(9, 34, 61, 0.055);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.insight-video-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 18px 38px rgba(9, 34, 61, 0.09);
+}
+
+
+/* =========================================================
+   FEATURED VIDEO CARD
+========================================================= */
+
+.featured-video-card {
+    display: block !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    box-sizing: border-box !important;
+}
+
+
+/* =========================================================
+   FEATURED VIDEO IMAGE WRAPPER
+========================================================= */
+
+.featured-video-card .insight-video-image-wrapper {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    height: clamp(260px, 31vw, 390px) !important;
+
+    min-height: 0 !important;
+
+    max-height: none !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    overflow: hidden !important;
+
+    background: #09223d;
+
+    box-sizing: border-box !important;
+
+    line-height: 0 !important;
+
+    flex: none !important;
+
+    align-self: auto !important;
+}
+
+
+/* =========================================================
+   FEATURED IMAGE
+========================================================= */
+
+.featured-video-card .insight-video-image {
+    display: block !important;
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    border: 0 !important;
+
+    object-fit: cover !important;
+
+    vertical-align: top !important;
+
+    box-sizing: border-box !important;
+
+    transition: transform 0.5s ease;
+}
+
+
+.insight-video-card:hover .insight-video-image {
+    transform: scale(1.02);
+}
+
+
+/* =========================================================
+   FEATURED VIDEO CONTENT
+========================================================= */
+
+.featured-video-card .insight-video-content {
+    position: relative !important;
+
+    display: block !important;
+
+    width: 100% !important;
+
+    height: auto !important;
+
+    min-height: 0 !important;
+
+    max-height: none !important;
+
+    margin: 0 !important;
+
+    padding: 25px 32px 28px !important;
+
+    overflow: visible !important;
+
+    background: #ffffff;
+
+    box-sizing: border-box !important;
+
+    flex: none !important;
+
+    align-self: auto !important;
+}
+
+
+/* =========================================================
+   FEATURED CATEGORY
+========================================================= */
+
+.featured-video-card .video-category {
+    display: block !important;
+
+    width: auto !important;
+
+    height: auto !important;
+
+    margin: 0 0 9px !important;
+
+    padding: 0 !important;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    color: #cda52b;
+}
+
+
+/* =========================================================
+   FEATURED TITLE
+========================================================= */
+
+.featured-video-card .insight-video-content h3 {
+    display: block !important;
+
+    width: auto !important;
+
+    height: auto !important;
+
+    margin: 0 !important;
+
+    padding: 0 !important;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 28px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.025em;
+
+    font-weight: 800;
+
+    color: #09223d;
+}
+
+
+/* =========================================================
+   FEATURED DESCRIPTION
+========================================================= */
+
+.featured-video-card .insight-video-content p {
+    display: block !important;
+
+    width: auto !important;
+
+    height: auto !important;
+
+    margin: 10px 0 0 !important;
+
+    padding: 0 !important;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    font-weight: 500;
+
+    color: #647c92;
+}
+
+
+/* =========================================================
+   FEATURED WATCH LINK
+========================================================= */
+
+.featured-video-card .watch-link {
+    display: inline-flex !important;
+
+    align-items: center;
+
+    width: fit-content !important;
+
+    height: auto !important;
+
+    margin: 14px 0 0 !important;
+
+    padding: 0 0 6px !important;
+}
+
+
+/* =========================================================
+   PREVENT CHILD STRETCHING
+========================================================= */
+
+.featured-video-card>* {
+    flex-grow: 0 !important;
+
+    flex-shrink: 0 !important;
+
+    align-self: auto !important;
+}
+
+
+/* =========================================================
+   PLAY BUTTON
+========================================================= */
+
+.video-play-button {
+    position: absolute;
+
+    left: 22px;
+
+    bottom: 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 50px;
+
+    height: 50px;
+
+    margin: 0;
+
+    padding: 0;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    border-radius: 50%;
+
+    background: rgba(9, 34, 61, 0.82);
+
+    color: #ffffff;
+
+    backdrop-filter: blur(8px);
+
+    z-index: 2;
+
+    box-sizing: border-box;
+}
+
+
+.video-play-button.large {
+    left: 50%;
+
+    top: 50%;
+
+    bottom: auto;
+
+    width: 72px;
+
+    height: 72px;
+
+    transform: translate(-50%, -50%);
+
+    background: #ffffff;
+
+    color: #d2a72c;
+
+    border: none;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   VIDEO DURATION
+========================================================= */
+
+.video-duration {
+    position: absolute;
+
+    right: 15px;
+
+    bottom: 15px;
+
+    margin: 0;
+
+    padding: 7px 10px;
+
+    background: #09223d;
+
+    color: #ffffff;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    z-index: 3;
+}
+
+
+/* =========================================================
+   WATCH LINK
+========================================================= */
+
+.watch-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    width: fit-content;
+
+    margin: 16px 0 0;
+
+    padding: 0 0 6px;
+
+    border: 0;
+
+    border-bottom: 2px solid #d2a72c;
+
+    background: transparent;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+
+    text-transform: uppercase;
+
+    color: #09223d;
+
+    cursor: pointer;
+
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.watch-link:hover {
+    gap: 14px;
+
+    color: #c59720;
+}
+
+
+/* =========================================================
+   SMALL VIDEO GRID
+========================================================= */
+
+.small-videos-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+
+    margin: 22px 0 0;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   SMALL VIDEO CARD
+========================================================= */
+
+.small-video-card {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    border: 1px solid #e1e7ec;
+
+    border-radius: 16px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   SMALL VIDEO IMAGE
+========================================================= */
+
+.small-video-card .insight-video-image-wrapper {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    height: 175px;
+
+    min-height: 0;
+
+    margin: 0;
+
+    padding: 0;
+
+    overflow: hidden;
+
+    background: #09223d;
+
+    line-height: 0;
+}
+
+
+.small-video-card .insight-video-image {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    object-fit: cover;
+
+    vertical-align: top;
+}
+
+
+/* =========================================================
+   SMALL VIDEO PLAY
+========================================================= */
+
+.small-video-card .video-play-button {
+    left: 16px;
+
+    bottom: 15px;
+
+    width: 44px;
+
+    height: 44px;
+}
+
+
+.small-video-card .video-duration {
+    right: 11px;
+
+    bottom: 11px;
+
+    padding: 6px 8px;
+}
+
+
+/* =========================================================
+   SMALL VIDEO CONTENT
+========================================================= */
+
+.small-video-card .insight-video-content {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    margin: 0;
+
+    padding: 19px 21px 22px;
+
+    background: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+.small-video-card .video-category {
+    display: block;
+
+    margin: 0 0 8px;
+
+    padding: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+
+    color: #cda52b;
+}
+
+
+.small-video-card .insight-video-content h3 {
+    margin: 0;
+
+    padding: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 18px;
+
+    line-height: 1.3;
+
+    letter-spacing: -0.02em;
+
+    font-weight: 800;
+
+    color: #09223d;
+}
+
+
+.small-video-card .insight-video-content p {
+    margin: 9px 0 0;
+
+    padding: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.55;
+
+    font-weight: 500;
+
+    color: #647c92;
+}
+
+
+.small-video-card .watch-link {
+    margin-top: 13px;
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   STORY PANEL
+========================================================= */
+
+.insight-story-panel {
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    width: 100%;
+
+    height: auto;
+
+    min-height: 0;
+
+    margin: 0;
+
+    padding: 38px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(145deg,
+            #09223d 0%,
+            #0b2947 58%,
+            #102f49 100%);
+
+    box-shadow:
+        0 18px 45px rgba(9, 34, 61, 0.14);
+
+    box-sizing: border-box;
+}
+
+
+.story-panel-top {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   STORY EYEBROW
+========================================================= */
+
+.story-eyebrow {
+    display: block;
+
+    margin: 0 0 16px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.22em;
+
+    color: #d6aa2c;
+}
+
+
+/* =========================================================
+   STORY HEADING
+========================================================= */
+
+.story-panel-top h2 {
+    margin: 0;
+
+    max-width: 450px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(31px, 2.6vw, 40px);
+
+    line-height: 1.12;
+
+    letter-spacing: -0.035em;
+
+    font-weight: 800;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   STORY VIDEO
+========================================================= */
+
+.story-video {
+    position: relative;
+
+    width: 100%;
+
+    margin: 26px 0 0;
+
+    overflow: hidden;
+
+    border-radius: 14px;
+
+    aspect-ratio: 16 / 9;
+
+    background: #183c58;
+}
+
+
+.story-video img {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    margin: 0;
+
+    padding: 0;
+
+    object-fit: cover;
+}
+
+
+.story-video::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: rgba(5, 24, 43, 0.15);
+}
+
+
+.story-video-play {
+    position: absolute;
+
+    left: 50%;
+
+    top: 50%;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0;
+
+    padding: 0;
+
+    transform: translate(-50%, -50%);
+
+    border-radius: 50%;
+
+    background: rgba(9, 34, 61, 0.76);
+
+    color: #d9aa2b;
+
+    border: 1px solid rgba(255, 255, 255, 0.45);
+
+    backdrop-filter: blur(6px);
+}
+
+
+/* =========================================================
+   STORY COPY
+========================================================= */
+
+.story-copy {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 24px 0 0;
+}
+
+
+.story-main-text {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 17px;
+
+    line-height: 1.65;
+
+    font-weight: 600;
+
+    color: #ffffff;
+}
+
+
+.story-secondary-text {
+    margin: 11px 0 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    font-weight: 500;
+
+    color: #aabaca;
+}
+
+
+/* =========================================================
+   SHARE STORY BUTTON
+========================================================= */
+
+.share-story-button {
+    position: relative;
+
+    z-index: 3;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin: 30px 0 0;
+
+    padding: 17px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #d7ab2d;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    color: #09223d;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.share-story-button:hover {
+    background: #e2b93d;
+
+    transform: translateY(-2px);
+}
+
+
+.share-story-button svg {
+    transition: transform 0.25s ease;
+}
+
+
+.share-story-button:hover svg {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   STORY DECORATION
+========================================================= */
+
+.story-decoration {
+    position: absolute;
+
+    right: -90px;
+
+    bottom: -100px;
+
+    width: 280px;
+
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: rgba(209, 166, 43, 0.08);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   PLACEHOLDER CONTENT
+========================================================= */
+
+.insight-placeholder {
+    min-height: 350px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    margin: 0;
+
+    padding: 55px;
+
+    border-radius: 18px;
+
+    background: #09223d;
+
+    color: #ffffff;
+
+    box-sizing: border-box;
+}
+
+
+.insight-placeholder span {
+    margin: 0 0 15px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.2em;
+
+    color: #d2a72c;
+}
+
+
+.insight-placeholder h3 {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 38px;
+
+    line-height: 1.15;
+}
+
+
+.insight-placeholder p {
+    max-width: 600px;
+
+    margin: 18px 0 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    color: #aebdcc;
+}
+
+
+/* =========================================================
+   RESPONSIVE — 1100px
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .insights-content {
+        grid-template-columns:
+            minmax(0, 1.55fr) minmax(300px, 0.9fr);
+
+        gap: 24px;
+    }
+
+
+    .insight-story-panel {
+        padding: 30px;
+    }
+
+
+    .featured-video-card .insight-video-image-wrapper {
+        height: 340px !important;
+    }
+
+
+    .featured-video-card .insight-video-content {
+        padding: 24px 28px 27px !important;
+    }
+
+
+    .featured-video-card .insight-video-content h3 {
+        font-size: 25px;
+    }
+
+
+    .story-panel-top h2 {
+        font-size: 32px;
+    }
+
+
+    .insight-tab {
+        padding: 0 14px;
+
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 900px
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .insights-section {
+        padding: 80px 0 90px;
+    }
+
+
+    .insights-header {
+        grid-template-columns: 1fr;
+
+        gap: 28px;
+    }
+
+
+    .insights-header-action {
+        padding-bottom: 0;
+    }
+
+
+    .insights-content {
+        grid-template-columns: 1fr;
+    }
+
+
+    .insight-story-panel {
+        margin-top: 4px;
+    }
+
+
+    .featured-video-card .insight-video-image-wrapper {
+        height: 360px !important;
+    }
+
+
+    .insight-tabs {
+        max-width: 850px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 700px
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .insights-container {
+        width: min(100% - 32px, 1200px);
+    }
+
+
+    .insights-section {
+        padding: 65px 0 75px;
+    }
+
+
+    .section-eyebrow {
+        margin-bottom: 22px;
+
+        font-size: 12px;
+    }
+
+
+    .insights-heading {
+        font-size: clamp(35px, 9vw, 50px);
+
+        line-height: 1.08;
+    }
+
+
+    .insights-description {
+        margin-top: 20px;
+
+        font-size: 15px;
+
+        line-height: 1.65;
+    }
+
+
+    /* =====================================================
+       HEADER ACTION
+    ===================================================== */
+
+    .insights-header-action button,
+    .insights-header-action a {
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       TABS
+    ===================================================== */
+
+    .insight-tabs-wrapper {
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        padding: 30px 0;
+
+        scrollbar-width: none;
+
+        -webkit-overflow-scrolling: touch;
+    }
+
+
+    .insight-tabs-wrapper::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    .insight-tabs {
+        width: max-content;
+
+        max-width: none;
+
+        display: flex;
+
+        gap: 6px;
+
+        padding: 5px;
+    }
+
+
+    .insight-tab {
+        min-width: 135px;
+
+        height: 52px;
+
+        padding: 0 18px;
+
+        font-size: 13px;
+
+        white-space: nowrap;
+    }
+
+
+    /* =====================================================
+       FEATURED VIDEO
+    ===================================================== */
+
+    .featured-video-card .insight-video-image-wrapper {
+        height: 300px !important;
+    }
+
+
+    .featured-video-card .insight-video-content {
+        padding: 23px 23px 26px !important;
+    }
+
+
+    .featured-video-card .insight-video-content h3 {
+        font-size: 24px;
+    }
+
+
+    .featured-video-card .insight-video-content p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       SMALL VIDEOS
+    ===================================================== */
+
+    .small-videos-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin-top: 18px;
+    }
+
+
+    .small-video-card .insight-video-image-wrapper {
+        height: 230px;
+    }
+
+
+    /* =====================================================
+       STORY
+    ===================================================== */
+
+    .insight-story-panel {
+        padding: 30px 24px;
+    }
+
+
+    .story-panel-top h2 {
+        font-size: 31px;
+    }
+
+
+    .story-main-text {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE — 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .insights-container {
+        width: calc(100% - 24px);
+    }
+
+
+    .insights-heading {
+        font-size: 34px;
+    }
+
+
+    /* =====================================================
+       HEADER ACTION
+    ===================================================== */
+
+    .insights-header-action button,
+    .insights-header-action a {
+        font-size: 11px;
+
+        gap: 9px;
+    }
+
+
+    /* =====================================================
+       TABS
+    ===================================================== */
+
+    .insight-tabs-wrapper {
+        padding: 24px 0 28px;
+    }
+
+
+    .insight-tabs {
+        gap: 5px;
+    }
+
+
+    .insight-tab {
+        min-width: 52px;
+
+        width: 52px;
+
+        height: 50px;
+
+        padding: 0;
+    }
+
+
+    .insight-tab span {
+        display: none;
+    }
+
+
+    .insight-tab-icon {
+        width: 22px;
+
+        height: 22px;
+    }
+
+
+    /* =====================================================
+       FEATURED VIDEO
+    ===================================================== */
+
+    .featured-video-card .insight-video-image-wrapper {
+        height: 230px !important;
+    }
+
+
+    .featured-video-card .insight-video-content {
+        padding: 21px 20px 24px !important;
+    }
+
+
+    .featured-video-card .insight-video-content h3 {
+        font-size: 22px;
+    }
+
+
+    /* =====================================================
+       SMALL VIDEOS
+    ===================================================== */
+
+    .small-video-card .insight-video-image-wrapper {
+        height: 210px;
+    }
+
+
+    .small-video-card .insight-video-content {
+        padding: 20px;
+    }
+
+
+    /* =====================================================
+       STORY
+    ===================================================== */
+
+    .story-video {
+        margin-top: 22px;
+    }
+}

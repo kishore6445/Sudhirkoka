@@ -1,0 +1,87 @@
+/*==================================================*
+* SECTION HEADING
+*==================================================*/
+
+.section-heading {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(42px, 4.5vw, 64px);
+
+    font-weight: 700;
+
+    line-height: 1.05;
+
+    letter-spacing: -.025em;
+}
+
+/*==================================================*
+* DARK
+*==================================================*/
+
+.section-heading--dark {
+    color: #102A43;
+}
+
+/*==================================================*
+* NAVY
+*==================================================*/
+
+.section-heading--navy {
+    color: #071F52;
+}
+
+/*==================================================*
+* WHITE
+*==================================================*/
+
+.section-heading--white {
+    color: #FFFFFF;
+}
+
+/*==================================================*
+* GOLD
+*==================================================*/
+
+.section-heading--gold {
+    color: #D4AF37;
+}
+
+/*==================================================*
+* ALIGNMENT
+*==================================================*/
+
+.section-heading--left {
+    text-align: left;
+}
+
+.section-heading--center {
+    text-align: center;
+}
+
+.section-heading--right {
+    text-align: right;
+}
+
+/*==================================================*
+* RESPONSIVE
+*==================================================*/
+
+@media (max-width: 768px) {
+
+    .section-heading {
+        font-size: clamp(36px, 8vw, 50px);
+
+        line-height: 1.08;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .section-heading {
+        font-size: 36px;
+    }
+
+}

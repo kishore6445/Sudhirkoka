@@ -1,0 +1,1009 @@
+/* =========================================================
+   ABOUT SECTION
+========================================================= */
+
+.about-section {
+    position: relative;
+    width: 100%;
+    padding: 100px 0 105px;
+    background: #ffffff;
+    color: #102a43;
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.about-container {
+    width: min(1200px, calc(100% - 64px));
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns:
+        minmax(0, 0.9fr) minmax(0, 1.1fr);
+
+    gap: 78px;
+    align-items: center;
+}
+
+
+/* =========================================================
+   LEFT — VISUAL
+========================================================= */
+
+.about-visual {
+    position: relative;
+
+    min-height: 610px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================================================
+   IMAGE BACKGROUND SHAPE
+========================================================= */
+
+.about-image-shape {
+    position: absolute;
+
+    width: 400px;
+    height: 485px;
+
+    border-radius: 34px;
+
+    background: #eee8dc;
+
+    transform: rotate(-5deg) translate(-8px, 12px);
+
+    z-index: 0;
+}
+
+
+/* =========================================================
+   GOLD CIRCLE
+========================================================= */
+
+.about-gold-circle {
+    position: absolute;
+
+    width: 82px;
+    height: 82px;
+
+    left: 5px;
+    top: 165px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(212, 175, 55, 0.55);
+
+    z-index: 1;
+}
+
+
+.about-gold-circle::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 11px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(212, 175, 55, 0.28);
+}
+
+
+/* =========================================================
+   IMAGE WRAPPER
+========================================================= */
+
+.about-image-wrapper {
+    position: relative;
+
+    width: 405px;
+    height: 470px;
+
+    border-radius: 27px;
+
+    overflow: hidden;
+
+    z-index: 2;
+
+    box-shadow:
+        0 25px 60px rgba(16, 42, 67, 0.14);
+}
+
+
+.about-image {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.6s ease;
+}
+
+
+.about-image-wrapper:hover .about-image {
+    transform: scale(1.025);
+}
+
+
+/* =========================================================
+   EXPERIENCE CARD
+========================================================= */
+
+.about-experience-card {
+    position: absolute;
+
+    right: -8px;
+    bottom: 38px;
+
+    width: 195px;
+
+    padding: 25px 26px;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(16, 42, 67, 0.08);
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 20px 48px rgba(16, 42, 67, 0.15);
+
+    z-index: 4;
+}
+
+
+.about-experience-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 25px;
+
+    width: 45px;
+    height: 3px;
+
+    border-radius: 0 0 5px 5px;
+
+    background: #d4af37;
+}
+
+
+.about-experience-number {
+    font-family: "Manrope", sans-serif;
+
+    font-size: 48px;
+    font-weight: 800;
+
+    line-height: 0.95;
+    letter-spacing: -0.04em;
+
+    color: #102a43;
+}
+
+
+.about-experience-label {
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    line-height: 1.45;
+
+    color: #486581;
+}
+
+
+/* =========================================================
+   RECOGNITION BADGE — IMAGE SIDE
+========================================================= */
+
+.about-recognition-badge {
+    position: absolute;
+
+    left: 5px;
+    bottom: 48px;
+
+    transform: translateX(-10px);
+
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 14px;
+
+    background: #102a43;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 12px 28px rgba(16, 42, 67, 0.16);
+
+    z-index: 5;
+}
+
+
+.about-recognition-icon {
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(212, 175, 55, 0.15);
+
+    color: #d4af37;
+}
+
+
+.about-recognition-badge>div:last-child {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.about-recognition-year {
+    font-family: "Manrope", sans-serif;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 0.13em;
+
+    color: #d4af37;
+}
+
+
+.about-recognition-title {
+    margin-top: 2px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+    font-weight: 700;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   RIGHT — CONTENT
+========================================================= */
+
+.about-content {
+    position: relative;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.about-label {
+    display: inline-flex;
+    align-items: center;
+
+    margin-bottom: 18px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+
+    color: #1d668a;
+}
+
+
+.about-label::before {
+    content: "";
+
+    width: 32px;
+    height: 2px;
+
+    margin-right: 11px;
+
+    background: #d4af37;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.about-heading {
+    max-width: 720px;
+
+    margin: 0 0 25px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(42px, 4vw, 57px);
+
+    font-weight: 750;
+
+    line-height: 1.01;
+
+    letter-spacing: -0.035em;
+
+    color: #102a43;
+}
+
+
+.about-heading span {
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.about-intro {
+    max-width: 690px;
+
+    margin: 0 0 13px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 17px;
+    font-weight: 500;
+
+    line-height: 1.65;
+
+    color: #1d668a;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.about-description {
+    max-width: 690px;
+
+    margin: 0 0 32px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 15px;
+    font-weight: 500;
+
+    line-height: 1.3;
+
+    color: #617786;
+}
+
+
+/* =========================================================
+   FOCUS GRID
+========================================================= */
+
+.about-focus-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    column-gap: 38px;
+    row-gap: 26px;
+
+    max-width: 710px;
+}
+
+
+/* =========================================================
+   FOCUS ITEM
+========================================================= */
+
+.about-focus-item {
+    display: grid;
+
+    grid-template-columns:
+        38px minmax(0, 1fr);
+
+    gap: 15px;
+
+    align-items: flex-start;
+}
+
+
+/* =========================================================
+   FOCUS ICON
+========================================================= */
+
+.about-focus-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #eaf1f4;
+
+    color: #1d668a;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.about-focus-item:hover .about-focus-icon {
+    background: #102a43;
+    color: #d4af37;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   FOCUS TITLE
+========================================================= */
+
+.about-focus-content h3 {
+    margin: 1px 0 5px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 20px;
+    font-weight: 750;
+
+    line-height: 1.12;
+
+    letter-spacing: -0.015em;
+
+    color: #102a43;
+}
+
+
+/* =========================================================
+   FOCUS DESCRIPTION
+========================================================= */
+
+.about-focus-content p {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11.5px;
+    font-weight: 400;
+
+    line-height: 1.55;
+
+    color: #617786;
+}
+
+
+/* =========================================================
+   RECOGNITION CARD
+========================================================= */
+
+.about-recognition {
+    max-width: 710px;
+
+    margin-top: 34px;
+    padding: 22px 24px;
+
+    background: #f8f1dd;
+
+    border: 1px solid rgba(212, 175, 55, 0.22);
+
+    border-radius: 18px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+.about-recognition::after {
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    right: -70px;
+    bottom: -90px;
+
+    border-radius: 50%;
+
+    background: rgba(212, 175, 55, 0.10);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   RECOGNITION HEADER
+========================================================= */
+
+.about-recognition-header {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.about-recognition-header-icon {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #102a43;
+
+    color: #d4af37;
+}
+
+
+.about-recognition-eyebrow {
+    display: block;
+
+    margin-bottom: 2px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 9px;
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+
+    color: #b28d1c;
+}
+
+
+.about-recognition-header h3 {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 18px;
+    font-weight: 750;
+
+    line-height: 1.1;
+
+    color: #102a43;
+}
+
+
+/* =========================================================
+   RECOGNITION DESCRIPTION
+========================================================= */
+
+.about-recognition-description {
+    max-width: 610px;
+
+    margin: 14px 0 15px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11.5px;
+    line-height: 1.55;
+
+    color: #617786;
+}
+
+
+/* =========================================================
+   RECOGNITION LIST
+========================================================= */
+
+.about-recognition-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+.about-recognition-item {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 7px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 10px;
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    color: #486581;
+}
+
+
+.about-recognition-check {
+    width: 17px;
+    height: 17px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    margin-top: 1px;
+
+    border-radius: 50%;
+
+    background: #102a43;
+
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   SIGNATURE
+========================================================= */
+
+.about-signature {
+    margin-top: 30px;
+}
+
+
+.about-signature-line {
+    width: 58px;
+    height: 3px;
+
+    margin-bottom: 12px;
+
+    border-radius: 999px;
+
+    background:
+        linear-gradient(90deg,
+            #1d668a,
+            #d4af37);
+}
+
+
+.about-signature h3 {
+    margin: 0 0 3px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 24px;
+    font-weight: 750;
+
+    line-height: 1.1;
+
+    color: #102a43;
+}
+
+
+.about-signature p {
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 9px;
+    font-weight: 700;
+
+    letter-spacing: 0.13em;
+
+    text-transform: uppercase;
+
+    color: #486581;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .about-container {
+        width: calc(100% - 48px);
+
+        gap: 55px;
+    }
+
+
+    .about-image-wrapper {
+        width: 350px;
+        height: 410px;
+    }
+
+
+    .about-image-shape {
+        width: 340px;
+        height: 430px;
+    }
+
+
+    .about-experience-card {
+        right: -5px;
+    }
+
+
+    .about-heading {
+        font-size: 46px;
+    }
+
+
+    .about-focus-grid {
+        column-gap: 25px;
+    }
+
+
+    .about-recognition-list {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .about-section {
+        padding: 80px 0 75px;
+    }
+
+
+    .about-container {
+        grid-template-columns: 1fr;
+
+        gap: 65px;
+    }
+
+
+    .about-visual {
+        min-height: 500px;
+
+        max-width: 520px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+
+    .about-content {
+        max-width: 700px;
+
+        margin: 0 auto;
+    }
+
+
+    .about-heading {
+        max-width: 700px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .about-section {
+        padding: 70px 0 65px;
+    }
+
+
+    .about-container {
+        width: calc(100% - 32px);
+
+        gap: 50px;
+    }
+
+
+    .about-visual {
+        min-height: 450px;
+    }
+
+
+    .about-image-wrapper {
+        width: 290px;
+        height: 350px;
+
+        border-radius: 20px;
+    }
+
+
+    .about-image-shape {
+        width: 285px;
+        height: 365px;
+    }
+
+
+    .about-gold-circle {
+        width: 65px;
+        height: 65px;
+
+        left: 0;
+        top: 105px;
+    }
+
+
+    .about-experience-card {
+        right: -2px;
+        bottom: 15px;
+
+        width: 155px;
+
+        padding: 18px 20px;
+
+        border-radius: 18px;
+    }
+
+
+    .about-experience-number {
+        font-size: 36px;
+    }
+
+
+    .about-experience-label {
+        font-size: 10px;
+    }
+
+
+    .about-recognition-badge {
+        left: 5px;
+        bottom: 22px;
+
+        transform: translateX(0);
+
+        padding: 8px 11px;
+    }
+
+
+    .about-recognition-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+
+    .about-recognition-title {
+        font-size: 10px;
+    }
+
+
+    .about-heading {
+        margin-bottom: 20px;
+
+        font-size: 40px;
+
+        line-height: 1;
+    }
+
+
+    .about-intro {
+        font-size: 14px;
+
+        line-height: 1.65;
+    }
+
+
+    .about-description {
+        font-size: 13px;
+
+        line-height: 1.65;
+
+        margin-bottom: 27px;
+    }
+
+
+    .about-focus-grid {
+        grid-template-columns: 1fr;
+
+        row-gap: 22px;
+    }
+
+
+    .about-focus-content h3 {
+        font-size: 21px;
+    }
+
+
+    .about-focus-content p {
+        font-size: 11.5px;
+    }
+
+
+    .about-recognition {
+        padding: 20px;
+    }
+
+
+    .about-recognition-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .about-signature {
+        margin-top: 28px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .about-image-wrapper {
+        width: 260px;
+        height: 320px;
+    }
+
+
+    .about-image-shape {
+        width: 255px;
+        height: 335px;
+    }
+
+
+    .about-experience-card {
+        right: -5px;
+        bottom: 5px;
+
+        width: 145px;
+    }
+
+
+    .about-recognition-badge {
+        left: -5px;
+    }
+
+
+    .about-heading {
+        font-size: 36px;
+    }
+
+}

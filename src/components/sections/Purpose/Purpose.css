@@ -1,0 +1,719 @@
+/* =========================================================
+   PURPOSE / PHILOSOPHY
+========================================================= */
+
+.purpose {
+    width: 100%;
+
+    padding: 90px 0;
+
+    background: #ffffff;
+
+    color: #07172b;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.purpose__container {
+    width: min(1200px, calc(100% - 64px));
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 0.5fr 1.28fr;
+
+    gap: 64px;
+
+    align-items: center;
+}
+
+
+/* =========================================================
+   LEFT SIDE
+========================================================= */
+
+.purpose__intro {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.purpose__eyebrow{
+    display: flex;
+
+    /* align-items: center; */
+
+    gap: 2px;
+
+    margin-bottom: 30px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 18px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
+
+    color: #c89f2d;
+}
+
+
+/* .purpose__eyebrow i {
+    width: 34px;
+
+    height: 1px;
+
+    display: block;
+
+    background: #d4af37;
+} */
+
+
+/* .purpose__eyebrow span:first-child {
+    font-size: 12px;
+
+    letter-spacing: 0.08em;
+} */
+
+
+/* =========================================================
+   LEFT HEADING
+========================================================= */
+
+.purpose__intro h2 {
+    max-width: 430px;
+
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: clamp(42px, 4vw, 56px);
+
+    font-weight: 800;
+
+    line-height: 1.04;
+
+    letter-spacing: -0.055em;
+
+    color: #07172b;
+}
+
+
+.purpose__intro h2 span {
+    color: #c89f2d;
+}
+
+
+/* =========================================================
+   LEFT DESCRIPTION
+========================================================= */
+
+.purpose__intro p {
+    max-width: 390px;
+
+    margin: 25px 0 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    line-height: 1.7;
+
+    color: rgba(7, 23, 43, 0.58);
+}
+
+
+/* =========================================================
+   SINGLE CARD
+========================================================= */
+/* 
+.purpose__card {
+    position: relative;
+
+    width: 100%;
+
+    height: 450px;
+
+    box-sizing: border-box;
+
+    padding: 40px 52px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(135deg,
+            #06172b 0%,
+            #071d35 100%);
+
+    color: #ffffff;
+
+    box-shadow:
+        0 22px 50px rgba(7, 23, 43, 0.15);
+} */
+
+
+/* GOLD EDGE */
+
+/* .purpose__card::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 5px;
+    height: 100%;
+
+    background: #d4af37;
+}
+ */
+
+/* =========================================================
+   CARD NUMBER
+========================================================= */
+
+/* .purpose__card-number {
+    position: absolute;
+
+    top: 28px;
+    right: 34px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.15em;
+
+    color: rgba(255, 255, 255, 0.32);
+} */
+
+
+/* =========================================================
+   CONTENT BLOCK
+========================================================= */
+
+/* =========================================================
+   TWO PHILOSOPHY BOXES
+========================================================= */
+
+.purpose__cards {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 14px;
+
+    width: 100%;
+
+    height: 430px;
+}
+
+
+/* =========================================================
+   COMMON BOX
+========================================================= */
+
+.purpose__box {
+    position: relative;
+
+    height: 100%;
+
+    box-sizing: border-box;
+
+    padding: 38px 32px;
+
+    overflow: hidden;
+
+    border-radius: 7px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+}
+
+
+/* =========================================================
+   PURPOSE — NAVY
+========================================================= */
+
+.purpose__box--purpose {
+    background: #06172B;
+
+    color: #FFFFFF;
+
+    box-shadow:
+        0 20px 45px rgba(7, 23, 43, 0.14);
+}
+
+
+.purpose__box--purpose::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: #D4AF37;
+}
+
+
+/* =========================================================
+   BELIEF — CREAM
+========================================================= */
+
+.purpose__box--belief {
+    background: #F3E9D2;
+
+    color: #07172B;
+
+    border:
+        1px solid rgba(200, 159, 45, 0.25);
+}
+
+
+.purpose__box--belief::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+
+    width: 4px;
+    height: 100%;
+
+    background: #D4AF37;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.purpose__number {
+    position: absolute;
+
+    top: 25px;
+    right: 27px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+.purpose__box--purpose .purpose__number {
+    color: rgba(255, 255, 255, 0.35);
+}
+
+
+.purpose__box--belief .purpose__number {
+    color: rgba(7, 23, 43, 0.35);
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.purpose__label {
+    position: relative;
+
+    z-index: 2;
+
+    margin-bottom: 20px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.17em;
+
+    color: #D4AF37;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.purpose__box h3 {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    line-height: 1.22;
+
+    letter-spacing: -0.035em;
+}
+
+
+/* PURPOSE TEXT */
+
+.purpose__box--purpose h3 {
+    color: #FFFFFF;
+}
+
+
+/* BELIEF TEXT */
+
+.purpose__box--belief h3 {
+    color: #07172B;
+}
+
+
+.purpose__box--belief h3 span {
+    color: #B88A20;
+}
+
+
+/* =========================================================
+   DECORATIVE LETTER
+========================================================= */
+/* 
+.purpose__decorative-letter {
+    position: absolute;
+
+    right: -35px;
+
+    bottom: -100px;
+
+    font-family: Georgia, serif;
+
+    font-size: 300px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    pointer-events: none;
+
+    user-select: none;
+}
+
+
+.purpose__box--purpose .purpose__decorative-letter {
+    color: rgba(212, 175, 55, 0.035);
+}
+
+
+.purpose__box--belief .purpose__decorative-letter {
+    color: rgba(7, 23, 43, 0.045);
+} */
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.purpose__label {
+    margin-bottom: 15px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   MAIN TEXT
+========================================================= */
+
+/* .purpose__block h3 {
+    max-width: 760px;
+
+    margin: 0;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.035em;
+
+    color: #ffffff;
+} */
+
+
+/* PURPOSE SLIGHTLY LARGER */
+
+/* .purpose__block--purpose h3 {
+    font-size: clamp(24px, 2.3vw, 28px);
+
+    line-height: 1.15;
+} */
+
+
+/* BELIEF */
+
+/* .purpose__block--belief h3 {
+    font-size: clamp(24px, 2.3vw, 28px);
+
+    line-height: 1.2;
+    
+} */
+
+
+/* .purpose__block--belief h3 span {
+    color: #d4af37;
+} */
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+/* 
+.purpose__divider {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    height: 1px;
+
+    flex-shrink: 0;
+
+    margin: 25px 0;
+
+    background:
+        rgba(255, 255, 255, 0.15);
+} */
+
+
+/* =========================================================
+   DECORATIVE LETTER
+========================================================= */
+/* 
+.purpose__background-letter {
+    position: absolute;
+
+    right: -45px;
+
+    bottom: -145px;
+
+    font-family: Georgia, serif;
+
+    font-size: 430px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    color:
+        rgba(212, 175, 55, 0.035);
+
+    pointer-events: none;
+
+    user-select: none;
+} */
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.purpose__card {
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+
+.purpose__card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 28px 55px rgba(7, 23, 43, 0.18);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .purpose__container {
+        grid-template-columns:
+            0.65fr 1.35fr;
+
+        gap: 40px;
+    }
+
+
+    .purpose__card {
+        height: 430px;
+
+        padding: 38px 42px;
+    }
+
+
+    .purpose__block--purpose h3 {
+        font-size: 31px;
+    }
+
+
+    .purpose__block--belief h3 {
+        font-size: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .purpose {
+        padding: 75px 0;
+    }
+
+
+    .purpose__container {
+        width: calc(100% - 32px);
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+
+    .purpose__intro h2 {
+        font-size: 42px;
+    }
+
+
+    .purpose__card {
+        height: auto;
+
+        min-height: 430px;
+
+        padding: 38px 32px;
+    }
+
+
+    .purpose__block--purpose h3 {
+        font-size: 30px;
+    }
+
+
+    .purpose__block--belief h3 {
+        font-size: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 500px) {
+
+    .purpose {
+        padding: 60px 0;
+    }
+
+
+    .purpose__container {
+        width: calc(100% - 32px);
+    }
+
+
+    .purpose__eyebrow {
+        margin-bottom: 28px;
+    }
+
+
+    .purpose__intro h2 {
+        font-size: 36px;
+    }
+
+
+    .purpose__card {
+        min-height: 460px;
+
+        padding: 32px 27px;
+    }
+
+
+    .purpose__block--purpose h3 {
+        font-size: 27px;
+    }
+
+
+    .purpose__block--belief h3 {
+        font-size: 23px;
+    }
+
+
+    .purpose__divider {
+        margin: 22px 0;
+    }
+
+
+    .purpose__background-letter {
+        font-size: 280px;
+
+        right: -25px;
+
+        bottom: -85px;
+    }
+
+}

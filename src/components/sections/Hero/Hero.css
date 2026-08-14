@@ -1,0 +1,809 @@
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding-top: 100px;
+    padding-bottom: 34px;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 80% 42%,
+            rgba(32, 76, 112, 0.28),
+            transparent 35%),
+        linear-gradient(120deg,
+            #020c1b 0%,
+            #06172b 55%,
+            #071d34 100%);
+
+    color: #ffffff;
+}
+
+
+/* subtle background glow */
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 650px;
+    height: 650px;
+
+    right: -250px;
+    top: 80px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(212, 175, 55, 0.08),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.hero__container {
+    position: relative;
+    z-index: 2;
+
+    width: min(1200px, calc(100% - 64px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   MAIN HERO
+========================================================= */
+
+.hero__main {
+
+    min-height: 520px;
+
+    display: grid;
+
+    grid-template-columns:
+       58% 42%;
+
+    align-items: center;
+
+    gap: 0px;
+
+}
+
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.hero__content {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 720px;
+}
+
+
+/* =========================================================
+   HEADING
+========================================================= */
+
+.hero__title {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+
+    margin: 20px 0 22px;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size:
+        clamp(44px,
+            3.5vw,
+            62px);
+
+    font-weight: 800;
+
+    line-height: 1.02;
+
+    letter-spacing: -0.045em;
+
+    text-transform: uppercase;
+}
+
+
+.hero__title>span {
+    display: block;
+
+    white-space: nowrap;
+}
+
+
+.hero__gold {
+    color: #D4AF37;
+
+    text-shadow:
+        0 0 18px rgba(212,
+            175,
+            55,
+            0.12);
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero__description {
+    max-width: 570px;
+
+    margin: 0 0 27px;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 15px;
+
+    line-height: 1.65;
+
+    color: rgba(255, 255, 255, 0.76);
+}
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.hero__actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+}
+
+
+/* =========================================================
+   VIDEO BUTTON
+========================================================= */
+
+.hero__video-button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.hero__video-button:hover {
+
+    color: #D4AF37;
+
+    transform:
+        translateX(3px);
+}
+
+
+.hero__play-icon {
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border:
+        1px solid #D4AF37;
+
+    border-radius: 50%;
+
+    color: #D4AF37;
+
+}
+
+
+/* =========================================================
+   VISUAL
+========================================================= */
+
+.hero__visual {
+
+    position: relative;
+
+    min-height: 520px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: flex-end;
+}
+
+
+/* =========================================================
+   IMAGE GLOW
+========================================================= */
+
+.hero__city-glow {
+
+    position: absolute;
+
+    right: 0;
+    bottom: 20px;
+
+    width: 580px;
+    height: 400px;
+
+    background:
+        radial-gradient(ellipse,
+            rgba(41, 91, 132, 0.38),
+            transparent 70%);
+
+    filter: blur(10px);
+}
+
+
+/* =========================================================
+   PERSON
+========================================================= */
+
+.hero__person {
+
+    position: relative;
+
+    z-index: 4;
+
+    width: 500px;
+    height: 500px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+}
+
+
+.hero__person-glow {
+
+    position: absolute;
+
+    bottom: 40px;
+
+    width: 430px;
+    height: 430px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(circle,
+            rgba(35, 91, 134, 0.40),
+            transparent 70%);
+
+    filter: blur(12px);
+
+    z-index: -1;
+}
+
+
+.hero__image {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    object-position:
+        center ;
+}
+
+
+/* =========================================================
+   GROWTH BARS
+========================================================= */
+/* 
+.hero__growth-bars {
+
+    position: absolute;
+
+    right: 0;
+    bottom: 60px;
+
+    width: 250px;
+    height: 190px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: flex-end;
+
+    gap: 9px;
+
+    z-index: 1;
+
+    opacity: 0.58;
+}
+
+
+.hero__growth-bars span {
+
+    width: 42px;
+
+    display: block;
+
+    border:
+        1px solid rgba(102,
+            163,
+            209,
+            0.32);
+
+    border-bottom: none;
+
+    background:
+        linear-gradient(to top,
+            rgba(50, 103, 150, 0.22),
+            rgba(73, 137, 190, 0.55));
+}
+
+
+.hero__growth-bars span:nth-child(1) {
+    height: 55px;
+}
+
+.hero__growth-bars span:nth-child(2) {
+    height: 85px;
+}
+
+.hero__growth-bars span:nth-child(3) {
+    height: 125px;
+}
+
+.hero__growth-bars span:nth-child(4) {
+    height: 170px;
+}
+ */
+
+/* =========================================================
+   GOLD GROWTH ARROW
+========================================================= */
+
+.hero__growth-arrow {
+
+    position: absolute;
+
+    right: -5px;
+    top: 30px;
+
+    width: 310px;
+    height: 25px;
+
+    z-index: 2;
+
+    filter:
+        drop-shadow(0 0 9px rgba(212,
+                175,
+                55,
+                0.20));
+}
+
+
+/* =========================================================
+   FOUR PILLARS
+========================================================= */
+
+.hero__pillars {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    min-height: 122px;
+
+    border:
+        1px solid rgba(212,
+            175,
+            55,
+            0.48);
+
+    border-radius: 10px;
+
+    background:
+        rgba(3,
+            18,
+            37,
+            0.88);
+
+    backdrop-filter:
+        blur(10px);
+
+    box-shadow:
+        0 18px 50px rgba(0,
+            0,
+            0,
+            0.30);
+}
+
+
+/* =========================================================
+   PILLAR
+========================================================= */
+
+.hero__pillar {
+
+    position: relative;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        14px 20px;
+
+    text-align: center;
+
+    transition:
+        background 0.25s ease;
+}
+
+
+/* vertical separator */
+
+.hero__pillar:not(:last-child)::after {
+
+    content: "";
+
+    position: absolute;
+
+    right: 0;
+    top: 20px;
+
+    width: 1px;
+    height: calc(100% - 40px);
+
+    background:
+        rgba(255,
+            255,
+            255,
+            0.28);
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.hero__pillar-icon {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 7px;
+
+    color: #D4AF37;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.hero__pillar h3 {
+
+    margin: 0;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 800;
+
+    line-height: 1.25;
+
+    letter-spacing: 0.015em;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.hero__pillar p {
+
+    margin: 5px 0 0;
+
+    font-family:
+        "Manrope",
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.35;
+
+    color:
+        rgba(255,
+            255,
+            255,
+            0.65);
+}
+
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.hero__pillar:hover {
+
+    background:
+        rgba(212,
+            175,
+            55,
+            0.055);
+}
+
+
+.hero__pillar:hover .hero__pillar-icon {
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .hero__container {
+        width:
+            calc(100% - 50px);
+    }
+
+    .hero__title {
+        font-size:
+            clamp(46px,
+                5vw,
+                60px);
+    }
+
+    .hero__person {
+        width: 500px;
+        height: 510px;
+    }
+
+    .hero__growth-arrow {
+        width: 250px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .hero {
+        padding-top: 80px;
+    }
+
+    .hero__main {
+
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+
+        padding-top: 35px;
+    }
+
+
+    .hero__content {
+        max-width: 760px;
+    }
+
+
+    .hero__title {
+
+        font-size:
+            clamp(44px,
+                8vw,
+                58px);
+    }
+
+
+    .hero__visual {
+
+        min-height: 450px;
+    }
+
+
+    .hero__person {
+
+        width: 480px;
+        height: 470px;
+    }
+
+
+    .hero__pillars {
+
+        margin-top: 20px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero__container {
+        width:
+            calc(100% - 28px);
+    }
+
+
+    .hero__title {
+
+        font-size: 39px;
+
+        line-height: 1.01;
+
+        letter-spacing:
+            -0.035em;
+    }
+
+
+    .hero__title>span {
+        white-space: normal;
+    }
+
+
+    .hero__description {
+        font-size: 14px;
+    }
+
+
+    .hero__actions {
+        flex-wrap: wrap;
+    }
+
+
+    .hero__visual {
+        min-height: 400px;
+    }
+
+
+    .hero__person {
+
+        width: 400px;
+        height: 400px;
+    }
+
+
+    .hero__growth-arrow {
+
+        width: 210px;
+
+        right: -15px;
+    }
+
+
+    .hero__growth-bars {
+
+        transform:
+            scale(0.72);
+
+        transform-origin:
+            bottom right;
+    }
+
+
+    /* 2 x 2 */
+
+    .hero__pillars {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .hero__pillar {
+
+        min-height: 115px;
+
+        padding:
+            12px 8px;
+    }
+
+
+    .hero__pillar:nth-child(2)::after {
+        display: none;
+    }
+
+
+    .hero__pillar:nth-child(-n + 2) {
+
+        border-bottom:
+            1px solid rgba(255,
+                255,
+                255,
+                0.15);
+    }
+
+
+    .hero__pillar h3 {
+        font-size: 11px;
+    }
+
+
+    .hero__pillar p {
+        font-size: 9px;
+    }
+
+}
