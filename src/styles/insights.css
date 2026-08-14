@@ -4,18 +4,13 @@
 
 .insights-section {
     width: 100%;
-
     background: #ffffff;
-
     padding: 100px 0 120px;
-
     overflow: hidden;
 }
 
-
 .insights-container {
     width: min(1200px, calc(100% - 64px));
-
     margin: 0 auto;
 }
 
@@ -38,7 +33,6 @@
 
     border-bottom: 1px solid #e2e7eb;
 }
-
 
 .insights-header-main {
     max-width: 900px;
@@ -71,11 +65,9 @@
     color: #0a2744;
 }
 
-
 .section-eyebrow span:first-child {
     color: #cda52d;
 }
-
 
 .section-eyebrow i {
     display: block;
@@ -110,7 +102,6 @@
     color: #09223d;
 }
 
-
 .insights-heading span {
     color: #d2a72c;
 }
@@ -144,12 +135,6 @@
 .insights-header-action {
     padding-bottom: 4px;
 }
-
-
-/*
-   Your JSX currently uses a button.
-   We style both button and anchor so either works.
-*/
 
 .insights-header-action button,
 .insights-header-action a {
@@ -190,7 +175,6 @@
         color 0.25s ease;
 }
 
-
 .insights-header-action button:hover,
 .insights-header-action a:hover {
     gap: 17px;
@@ -200,14 +184,14 @@
     text-decoration: none;
 }
 
-
 .insights-header-action svg {
     flex-shrink: 0;
 }
 
 
 /* =========================================================
-   INSIGHTS TABS WRAPPER
+   INSIGHTS TABS
+   ICON-ONLY PREMIUM NAVIGATION
 ========================================================= */
 
 .insight-tabs-wrapper {
@@ -219,44 +203,65 @@
 
     align-items: center;
 
-    padding: 42px 0 38px;
+    padding: 42px 0 48px;
 }
 
 
 /* =========================================================
    TABS CONTAINER
 ========================================================= */
-
+ 
 .insight-tabs {
     width: 100%;
 
-    max-width: 930px;
+    max-width: 560px;
 
-    display: grid;
+    display: flex;
 
-    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
 
-    align-items: stretch;
+    justify-content: center;
 
-    gap: 0;
+    gap: 18px;
 
-    padding: 6px;
+    padding: 10px;
 
     background: #ffffff;
 
     border: 1px solid #e1e7ec;
 
-    border-radius: 16px;
+    border-radius: 22px;
 
     box-shadow:
-        0 12px 32px rgba(9, 34, 61, 0.06);
+        0 14px 38px rgba(9, 34, 61, 0.07);
 
     box-sizing: border-box;
-}
+} 
+/* .insight-tabs {
+    width: 50%;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    padding: 12px 16px;
+
+    background: #040d17;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 14px 35px rgba(9, 34, 61, 0.18);
+
+    box-sizing: border-box;
+} */
 
 /* =========================================================
-   TAB LINK
+   TAB
 ========================================================= */
 
 .insight-tab {
@@ -268,31 +273,23 @@
 
     justify-content: center;
 
-    gap: 11px;
+    width: 72px;
 
-    min-width: 0;
+    height: 72px;
 
-    height: 58px;
+    flex: 0 0 72px;
 
     margin: 0;
 
-    padding: 0 20px;
+    padding: 0;
 
-    border: 1px solid transparent;
+    border: 0;
 
-    border-radius: 11px;
+    border-radius: 18px;
 
     background: transparent;
 
-    font-family: "Manrope", sans-serif;
-
-    font-size: 15px;
-
-    font-weight: 750;
-
-    line-height: 1;
-
-    color: #647b90;
+    color: #6f879b;
 
     text-decoration: none !important;
 
@@ -301,9 +298,9 @@
     box-sizing: border-box;
 
     transition:
-        color 0.25s ease,
+        transform 0.25s ease,
         background 0.25s ease,
-        transform 0.25s ease;
+        color 0.25s ease;
 }
 
 
@@ -320,17 +317,78 @@
 
 
 /* =========================================================
-   TAB ICON
+   ICON BACKGROUND
 ========================================================= */
 
-.insight-tab-icon {
-    flex-shrink: 0;
+.insight-tab-icon-wrap {
+    position: relative;
+
+    width: 52px;
+
+    height: 52px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 16px;
+
+    background: #f4f7f9;
 
     color: #6f879b;
 
+    box-sizing: border-box;
+
     transition:
+        background 0.25s ease,
         color 0.25s ease,
-        transform 0.25s ease;
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+/* =========================================================
+   ICON
+========================================================= */
+
+.insight-tab-icon {
+    display: block;
+
+    flex-shrink: 0;
+
+    color: currentColor;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+/* =========================================================
+   HIDE LABEL
+   Label remains accessible but is visually hidden.
+========================================================= */
+
+.insight-tab-label {
+    position: absolute;
+
+    width: 1px;
+
+    height: 1px;
+
+    padding: 0;
+
+    margin: -1px;
+
+    overflow: hidden;
+
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+
+    border: 0;
 }
 
 
@@ -341,28 +399,159 @@
 .insight-tab:hover {
     color: #09223d;
 
-    background: #f7f9fa;
-
-    transform: translateY(-1px);
-
-    text-decoration: none !important;
+    transform: translateY(-3px);
 }
 
+.insight-tab:hover .insight-tab-icon-wrap {
+    background: #d2a72c;
+
+    color: #09223d;
+
+    transform: scale(1.05);
+
+    box-shadow:
+        0 8px 22px rgba(210, 167, 44, 0.22);
+}
 
 .insight-tab:hover .insight-tab-icon {
-    color: #d2a72c;
-
-    transform: translateY(-1px);
+    transform: scale(1.06);
 }
 
 
-/*
-   IMPORTANT:
-   There is intentionally NO .active styling.
+/* =========================================================
+   TOOLTIP
+========================================================= */
 
-   The /insights landing page is an overview page.
-   All four categories remain visually neutral.
-*/
+.insight-tab::after {
+    content: attr(data-label);
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -43px;
+
+    transform:
+        translateX(-50%) translateY(-5px);
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    background: #09223d;
+
+    color: #ffffff;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    line-height: 1;
+
+    letter-spacing: 0.06em;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 50;
+
+    box-shadow:
+        0 8px 20px rgba(9, 34, 61, 0.15);
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   TOOLTIP ARROW
+========================================================= */
+
+.insight-tab::before {
+    content: "";
+
+    position: absolute;
+
+    left: 50%;
+
+    bottom: -16px;
+
+    transform:
+        translateX(-50%) translateY(-5px);
+
+    width: 0;
+
+    height: 0;
+
+    border-left: 5px solid transparent;
+
+    border-right: 5px solid transparent;
+
+    border-bottom: 5px solid #09223d;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    z-index: 51;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   SHOW TOOLTIP ON HOVER
+========================================================= */
+
+.insight-tab:hover::after,
+.insight-tab:hover::before {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateX(-50%) translateY(0);
+}
+
+
+/* =========================================================
+   ACTIVE TAB
+========================================================= */
+
+.insight-tab--active {
+    color: #09223d;
+}
+
+.insight-tab--active .insight-tab-icon-wrap {
+    background: #d2a72c;
+
+    color: #09223d;
+
+    box-shadow:
+        0 8px 22px rgba(210, 167, 44, 0.20);
+}
+
+.insight-tab--active .insight-tab-icon {
+    transform: scale(1.04);
+}
+
+.insight-tab--active:hover .insight-tab-icon-wrap {
+    background: #e0b638;
+}
 
 
 /* =========================================================
@@ -379,7 +568,6 @@
 
     align-items: start;
 }
-
 
 .insights-video-area {
     width: 100%;
@@ -426,7 +614,6 @@
         transform 0.25s ease,
         box-shadow 0.25s ease;
 }
-
 
 .insight-video-card:hover {
     transform: translateY(-2px);
@@ -519,7 +706,6 @@
 
     transition: transform 0.5s ease;
 }
-
 
 .insight-video-card:hover .insight-video-image {
     transform: scale(1.02);
@@ -716,7 +902,6 @@
     box-sizing: border-box;
 }
 
-
 .video-play-button.large {
     left: 50%;
 
@@ -809,11 +994,12 @@
 
     cursor: pointer;
 
+    text-decoration: none;
+
     transition:
         gap 0.25s ease,
         color 0.25s ease;
 }
-
 
 .watch-link:hover {
     gap: 14px;
@@ -866,6 +1052,17 @@
     background: #ffffff;
 
     box-sizing: border-box;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.small-video-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(9, 34, 61, 0.08);
 }
 
 
@@ -895,7 +1092,6 @@
     line-height: 0;
 }
 
-
 .small-video-card .insight-video-image {
     display: block;
 
@@ -910,6 +1106,12 @@
     object-fit: cover;
 
     vertical-align: top;
+
+    transition: transform 0.45s ease;
+}
+
+.small-video-card:hover .insight-video-image {
+    transform: scale(1.025);
 }
 
 
@@ -926,7 +1128,6 @@
 
     height: 44px;
 }
-
 
 .small-video-card .video-duration {
     right: 11px;
@@ -959,7 +1160,6 @@
     box-sizing: border-box;
 }
 
-
 .small-video-card .video-category {
     display: block;
 
@@ -980,7 +1180,6 @@
     color: #cda52b;
 }
 
-
 .small-video-card .insight-video-content h3 {
     margin: 0;
 
@@ -999,7 +1198,6 @@
     color: #09223d;
 }
 
-
 .small-video-card .insight-video-content p {
     margin: 9px 0 0;
 
@@ -1015,7 +1213,6 @@
 
     color: #647c92;
 }
-
 
 .small-video-card .watch-link {
     margin-top: 13px;
@@ -1060,7 +1257,6 @@
 
     box-sizing: border-box;
 }
-
 
 .story-panel-top {
     position: relative;
@@ -1133,7 +1329,6 @@
     background: #183c58;
 }
 
-
 .story-video img {
     display: block;
 
@@ -1148,7 +1343,6 @@
     object-fit: cover;
 }
 
-
 .story-video::after {
     content: "";
 
@@ -1158,7 +1352,6 @@
 
     background: rgba(5, 24, 43, 0.15);
 }
-
 
 .story-video-play {
     position: absolute;
@@ -1209,7 +1402,6 @@
     margin: 24px 0 0;
 }
 
-
 .story-main-text {
     margin: 0;
 
@@ -1223,7 +1415,6 @@
 
     color: #ffffff;
 }
-
 
 .story-secondary-text {
     margin: 11px 0 0;
@@ -1282,18 +1473,15 @@
         background 0.25s ease;
 }
 
-
 .share-story-button:hover {
     background: #e2b93d;
 
     transform: translateY(-2px);
 }
 
-
 .share-story-button svg {
     transition: transform 0.25s ease;
 }
-
 
 .share-story-button:hover svg {
     transform: translateX(4px);
@@ -1349,7 +1537,6 @@
     box-sizing: border-box;
 }
 
-
 .insight-placeholder span {
     margin: 0 0 15px;
 
@@ -1364,7 +1551,6 @@
     color: #d2a72c;
 }
 
-
 .insight-placeholder h3 {
     margin: 0;
 
@@ -1374,7 +1560,6 @@
 
     line-height: 1.15;
 }
-
 
 .insight-placeholder p {
     max-width: 600px;
@@ -1430,10 +1615,28 @@
     }
 
 
-    .insight-tab {
-        padding: 0 14px;
+    /* Tabs */
 
-        font-size: 14px;
+    .insight-tabs {
+        max-width: 520px;
+
+        gap: 14px;
+    }
+
+
+    .insight-tab {
+        width: 68px;
+
+        height: 68px;
+
+        flex-basis: 68px;
+    }
+
+
+    .insight-tab-icon-wrap {
+        width: 50px;
+
+        height: 50px;
     }
 }
 
@@ -1477,7 +1680,7 @@
 
 
     .insight-tabs {
-        max-width: 850px;
+        max-width: 500px;
     }
 }
 
@@ -1532,50 +1735,51 @@
 
 
     /* =====================================================
-       TABS
+       ICON TABS
     ===================================================== */
 
     .insight-tabs-wrapper {
-        justify-content: flex-start;
+        justify-content: center;
 
-        overflow-x: auto;
-
-        padding: 30px 0;
-
-        scrollbar-width: none;
-
-        -webkit-overflow-scrolling: touch;
-    }
-
-
-    .insight-tabs-wrapper::-webkit-scrollbar {
-        display: none;
+        padding: 30px 0 34px;
     }
 
 
     .insight-tabs {
-        width: max-content;
+        width: auto;
 
-        max-width: none;
+        max-width: 100%;
 
-        display: flex;
+        gap: 8px;
 
-        gap: 6px;
+        padding: 8px;
 
-        padding: 5px;
+        border-radius: 19px;
     }
 
 
     .insight-tab {
-        min-width: 135px;
+        width: 60px;
 
-        height: 52px;
+        height: 60px;
 
-        padding: 0 18px;
+        flex: 0 0 60px;
+    }
 
-        font-size: 13px;
 
-        white-space: nowrap;
+    .insight-tab-icon-wrap {
+        width: 46px;
+
+        height: 46px;
+
+        border-radius: 14px;
+    }
+
+
+    .insight-tab-icon {
+        width: 22px;
+
+        height: 22px;
     }
 
 
@@ -1670,39 +1874,45 @@
 
 
     /* =====================================================
-       TABS
+       ICON TABS
     ===================================================== */
 
     .insight-tabs-wrapper {
-        padding: 24px 0 28px;
+        padding: 24px 0 30px;
     }
 
 
     .insight-tabs {
         gap: 5px;
+
+        padding: 7px;
+
+        border-radius: 17px;
     }
 
 
     .insight-tab {
-        min-width: 52px;
+        width: 54px;
 
-        width: 52px;
+        height: 54px;
 
-        height: 50px;
-
-        padding: 0;
+        flex: 0 0 54px;
     }
 
 
-    .insight-tab span {
-        display: none;
+    .insight-tab-icon-wrap {
+        width: 42px;
+
+        height: 42px;
+
+        border-radius: 13px;
     }
 
 
     .insight-tab-icon {
-        width: 22px;
+        width: 20px;
 
-        height: 22px;
+        height: 20px;
     }
 
 
@@ -1745,5 +1955,27 @@
 
     .story-video {
         margin-top: 22px;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .insight-tab,
+    .insight-tab-icon-wrap,
+    .insight-tab-icon,
+    .insight-tab::after,
+    .insight-tab::before,
+    .insight-video-card,
+    .insight-video-image,
+    .small-video-card,
+    .small-video-card .insight-video-image,
+    .watch-link,
+    .share-story-button {
+        transition: none !important;
     }
 }

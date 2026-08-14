@@ -1,37 +1,49 @@
 /* =========================================================
-   VIDEO LIBRARY + VIDEO CATEGORY
-   MATCHES ARTICLES / REFLECTIONS VISUAL SYSTEM
+   VIDEO CATEGORY PAGE
+   /insights/videos/:category
+
+   Design:
+   Navy  #123552
+   Gold  #d4af37
+   Text  #102a43
+   Muted #67839a
 ========================================================= */
-
-.video-library-page,
-.video-category-page {
-    width: 100%;
-    min-height: 100vh;
-    background: #ffffff;
-    color: #102a43;
-    font-family: "Manrope", sans-serif;
-    overflow-x: hidden;
-    box-sizing: border-box;
-}
-
-.video-library-page *,
-.video-category-page * {
-    box-sizing: border-box;
-}
-
-.video-library-page a,
-.video-category-page a {
-    text-decoration: none;
-}
 
 
 /* =========================================================
-   VIDEO LIBRARY PAGE
-   /insights/videos
+   PAGE
 ========================================================= */
 
-.video-library-page {
+.video-category-page {
+
+    width: 100%;
+    min-height: 100vh;
+
     padding: 105px 4.5vw 100px;
+
+    background: #ffffff;
+
+    color: #102a43;
+
+    font-family: "Manrope", sans-serif;
+
+    overflow-x: hidden;
+
+    box-sizing: border-box;
+}
+
+
+.video-category-page *,
+.video-category-page *::before,
+.video-category-page *::after {
+
+    box-sizing: border-box;
+}
+
+
+.video-category-page a {
+
+    text-decoration: none;
 }
 
 
@@ -39,10 +51,12 @@
    HERO
 ========================================================= */
 
-.video-library-hero {
+.video-category-header {
+
     position: relative;
 
     width: 100%;
+
     max-width: 1500px;
 
     min-height: 555px;
@@ -51,9 +65,11 @@
 
     padding: 42px 64px 68px;
 
-    border-radius: 0 0 34px 34px;
+    border-radius:
+        0 0 34px 34px;
 
     background: #123552;
+
     color: #ffffff;
 
     overflow: hidden;
@@ -62,62 +78,78 @@
         0 28px 65px rgba(16, 42, 67, 0.13);
 
     display: flex;
+
     flex-direction: column;
 }
 
 
 /* =========================================================
-   HERO DECORATIVE CIRCLES
+   HERO DECORATION
 ========================================================= */
 
-.video-library-hero::before {
+.video-category-header::before {
+
     content: "";
 
     position: absolute;
 
     width: 520px;
+
     height: 520px;
 
-    top: -295px;
+    top: -290px;
+
     right: -85px;
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.035);
+    background:
+        rgba(255, 255, 255, 0.025);
+
+    border:
+        1px solid rgba(212, 175, 55, 0.12);
 
     pointer-events: none;
 }
 
-.video-library-hero::after {
+
+.video-category-header::after {
+
     content: "";
 
     position: absolute;
 
-    width: 300px;
-    height: 300px;
+    width: 310px;
 
-    left: -155px;
-    bottom: -235px;
+    height: 310px;
+
+    left: -150px;
+
+    bottom: -240px;
 
     border-radius: 50%;
 
-    background: rgba(255, 255, 255, 0.025);
+    background:
+        rgba(255, 255, 255, 0.025);
 
     pointer-events: none;
 }
 
 
 /* =========================================================
-   BACK TO INSIGHTS
+   BACK TO VIDEOS
 ========================================================= */
 
-.video-back-link {
+.video-category-back {
+
     position: relative;
-    z-index: 5;
+
+    z-index: 10;
 
     width: fit-content;
 
     display: inline-flex;
+
     align-items: center;
 
     gap: 11px;
@@ -125,6 +157,7 @@
     color: #ffffff;
 
     font-size: 13px;
+
     font-weight: 800;
 
     letter-spacing: 0.13em;
@@ -132,33 +165,48 @@
     text-transform: uppercase;
 
     transition:
-        color 0.2s ease,
-        gap 0.2s ease;
+        color 0.25s ease,
+        gap 0.25s ease;
 }
 
-.video-back-link:hover {
+
+.video-category-back:hover {
+
     color: #d4af37;
+
     gap: 15px;
 }
 
-.video-back-link svg {
+
+.video-category-back svg {
+
+    width: 19px;
+
+    height: 19px;
+
     flex-shrink: 0;
 
-    transition: transform 0.2s ease;
+    transition:
+        transform 0.25s ease;
 }
 
-.video-back-link:hover svg {
-    transform: translateX(-3px);
+
+.video-category-back:hover svg {
+
+    transform:
+        translateX(-4px);
 }
 
 
 /* =========================================================
-   HERO CONTENT
+   HERO GRID
 ========================================================= */
 
-.video-hero-content {
+.video-category-header-grid {
+
     position: relative;
-    z-index: 2;
+
+    z-index: 5;
 
     flex: 1;
 
@@ -179,8 +227,10 @@
    EYEBROW
 ========================================================= */
 
-.video-hero-eyebrow {
-    display: inline-flex;
+.video-category-eyebrow {
+
+    display: flex;
+
     align-items: center;
 
     gap: 14px;
@@ -190,6 +240,7 @@
     color: #d4af37;
 
     font-size: 13px;
+
     font-weight: 800;
 
     letter-spacing: 0.18em;
@@ -197,29 +248,24 @@
     text-transform: uppercase;
 }
 
-/*
-   JSX already contains:
-   03 / VIDEOS
 
-   Therefore DON'T add another ::before "03".
-*/
+.video-category-eyebrow span {
 
-.video-hero-eyebrow::before {
-    display: none;
+    white-space: nowrap;
 }
 
 
-/* Gold line after VIDEOS */
-
-.video-hero-eyebrow::after {
-    content: "";
+.video-category-eyebrow i {
 
     display: block;
 
     width: 48px;
+
     height: 2px;
 
     background: #d4af37;
+
+    flex-shrink: 0;
 }
 
 
@@ -227,516 +273,37 @@
    HERO TITLE
 ========================================================= */
 
-.video-hero-left h1 {
-    margin: 0;
-
-    max-width: 800px;
-
-    color: #ffffff;
-
-    font-size: clamp(64px, 6.3vw, 92px);
-
-    font-weight: 800;
-
-    line-height: 0.92;
-
-    letter-spacing: -0.065em;
-}
-
-.video-hero-left h1 span {
-    color: #d4af37;
-}
-
-
-/* =========================================================
-   HERO DESCRIPTION
-========================================================= */
-
-.video-hero-right {
-    width: 100%;
-
-    max-width: 510px;
-
-    justify-self: end;
-
-    padding-top: 45px;
-}
-
-.video-hero-right p {
-    margin: 0;
-
-    color: rgba(255, 255, 255, 0.78);
-
-    font-size: 17px;
-
-    font-weight: 500;
-
-    line-height: 1.7;
-}
-
-
-/* =========================================================
-   CATEGORY SECTION
-========================================================= */
-
-.video-category-section {
-    width: 100%;
-
-    max-width: 1500px;
-
-    margin: 58px auto 0;
-}
-
-
-/* =========================================================
-   CATEGORY HEADING
-========================================================= */
-
-.video-category-heading {
-    display: flex;
-
-    align-items: center;
-
-    gap: 28px;
-
-    padding-bottom: 17px;
-
-    border-bottom: 1px solid #dfe6eb;
-}
-
-.video-category-heading span {
-    flex-shrink: 0;
-
-    color: #c99f20;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.18em;
-
-    text-transform: uppercase;
-}
-
-.video-category-heading div {
-    flex: 1;
-
-    height: 1px;
-
-    background: #dfe6eb;
-}
-
-
-/* =========================================================
-   CATEGORY LIST
-========================================================= */
-
-.video-category-list {
-    width: 100%;
-}
-
-
-/* =========================================================
-   CATEGORY ROW
-========================================================= */
-
-.video-library-page .video-category-row {
-    position: relative;
-
-    display: grid;
-
-    grid-template-columns:
-        62px 54px minmax(0, 1fr) 48px;
-
-    align-items: center;
-
-    gap: 22px;
-
-    min-height: 128px;
-
-    padding: 23px 0;
-
-    border-bottom: 1px solid #e3e9ed;
-
-    color: #102a43;
-
-    transition:
-        padding-left 0.25s ease,
-        background 0.25s ease;
-}
-
-.video-library-page .video-category-row:hover {
-    padding-left: 10px;
-
-    background:
-        linear-gradient(90deg,
-            rgba(212, 175, 55, 0.045),
-            transparent 75%);
-}
-
-
-/* =========================================================
-   NUMBER
-========================================================= */
-
-.video-library-page .video-category-number {
-    align-self: start;
-
-    padding-top: 8px;
-
-    color: #91a7b7;
-
-    font-size: 15px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.05em;
-}
-
-
-/* =========================================================
-   PLAY ICON
-========================================================= */
-
-.video-library-page .video-category-icon {
-    width: 52px;
-    height: 52px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid #dbe4ea;
-
-    border-radius: 50%;
-
-    color: #7896aa;
-
-    background: #ffffff;
-
-    transition:
-        border-color 0.25s ease,
-        background 0.25s ease,
-        color 0.25s ease,
-        transform 0.25s ease;
-}
-
-.video-library-page .video-category-row:hover .video-category-icon {
-    border-color: #d4af37;
-
-    background: #d4af37;
-
-    color: #102a43;
-
-    transform: scale(1.05);
-}
-
-
-/* =========================================================
-   CATEGORY CONTENT
-========================================================= */
-
-.video-library-page .video-category-content {
-    min-width: 0;
-}
-
-.video-library-page .video-category-content h2 {
-    margin: 0 0 7px;
-
-    color: #102a43;
-
-    font-size: clamp(26px, 2.4vw, 36px);
-
-    font-weight: 800;
-
-    line-height: 1.05;
-
-    letter-spacing: -0.04em;
-
-    transition: color 0.2s ease;
-}
-
-.video-library-page .video-category-row:hover .video-category-content h2 {
-    color: #c99f20;
-}
-
-.video-library-page .video-category-content p {
-    max-width: 850px;
+.video-category-header-grid h1 {
 
     margin: 0;
 
-    color: #6b879d;
-
-    font-size: 14px;
-
-    font-weight: 500;
-
-    line-height: 1.55;
-}
-
-
-/* =========================================================
-   ARROW
-========================================================= */
-
-.video-library-page .video-category-arrow {
-    width: 50px;
-    height: 50px;
-
-    display: flex;
-
-    align-items: center;
-    justify-content: center;
-
-    border: 1px solid #dbe4ea;
-
-    border-radius: 50%;
-
-    color: #7895a9;
-
-    transition:
-        background 0.25s ease,
-        color 0.25s ease,
-        border-color 0.25s ease,
-        transform 0.25s ease;
-}
-
-.video-library-page .video-category-row:hover .video-category-arrow {
-    border-color: #102f4b;
-
-    background: #102f4b;
+    max-width: 820px;
 
     color: #ffffff;
 
-    transform: translateX(4px);
-}
-
-
-/* =========================================================
-   =========================================================
-   VIDEO CATEGORY DETAIL PAGE
-   /insights/videos/:category
-   =========================================================
-   ========================================================= */
-
-.video-category-page {
-    padding: 105px 4.5vw 100px;
-}
-
-
-/* =========================================================
-   DETAIL HERO
-========================================================= */
-
-.video-category-page .video-category-header {
-    position: relative;
-
-    width: 100%;
-
-    max-width: 1500px;
-
-    min-height: 555px;
-
-    margin: 0 auto;
-
-    padding: 42px 64px 68px;
-
-    border-radius: 0 0 34px 34px;
-
-    background: #123552;
-
-    color: #ffffff;
-
-    overflow: hidden;
-
-    box-shadow:
-        0 28px 65px rgba(16, 42, 67, 0.13);
-
-    display: flex;
-
-    flex-direction: column;
-}
-
-
-/* =========================================================
-   DETAIL HERO CIRCLES
-========================================================= */
-
-.video-category-page .video-category-header::before {
-    content: "";
-
-    position: absolute;
-
-    width: 520px;
-    height: 520px;
-
-    top: -295px;
-    right: -85px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.035);
-
-    pointer-events: none;
-}
-
-.video-category-page .video-category-header::after {
-    content: "";
-
-    position: absolute;
-
-    width: 300px;
-    height: 300px;
-
-    left: -155px;
-    bottom: -235px;
-
-    border-radius: 50%;
-
-    background: rgba(255, 255, 255, 0.025);
-
-    pointer-events: none;
-}
-
-
-/* =========================================================
-   DETAIL BACK
-========================================================= */
-
-.video-category-page .video-category-back {
-    position: relative;
-
-    z-index: 5;
-
-    width: fit-content;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    gap: 11px;
-
-    color: #ffffff;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.13em;
-
-    text-transform: uppercase;
-
-    transition:
-        color 0.2s ease,
-        gap 0.2s ease;
-}
-
-.video-category-page .video-category-back:hover {
-    color: #d4af37;
-
-    gap: 15px;
-}
-
-.video-category-page .video-category-back svg {
-    flex-shrink: 0;
-
-    transition: transform 0.2s ease;
-}
-
-.video-category-page .video-category-back:hover svg {
-    transform: translateX(-3px);
-}
-
-
-/* =========================================================
-   DETAIL HERO GRID
-========================================================= */
-
-.video-category-header-grid {
-    position: relative;
-
-    z-index: 3;
-
-    flex: 1;
-
-    display: grid;
-
-    grid-template-columns:
-        minmax(0, 1.05fr) minmax(320px, 0.75fr);
-
-    align-items: center;
-
-    gap: 80px;
-
-    padding-top: 35px;
-}
-
-
-/* =========================================================
-   DETAIL EYEBROW
-========================================================= */
-
-.video-category-page .video-category-eyebrow {
-    display: flex;
-
-    align-items: center;
-
-    gap: 14px;
-
-    margin-bottom: 30px;
-
-    color: #d4af37;
-
-    font-size: 13px;
-
-    font-weight: 800;
-
-    letter-spacing: 0.18em;
-
-    text-transform: uppercase;
-}
-
-.video-category-page .video-category-eyebrow i {
-    display: block;
-
-    width: 48px;
-    height: 2px;
-
-    background: #d4af37;
-}
-
-
-/* =========================================================
-   DETAIL TITLE
-========================================================= */
-
-.video-category-page .video-category-header-grid h1 {
-    margin: 0;
-
-    max-width: 800px;
-
-    color: #ffffff;
-
-    font-size: clamp(60px, 6vw, 88px);
+    font-size:
+        clamp(60px, 6vw, 88px);
 
     font-weight: 800;
 
     line-height: 0.93;
 
-    letter-spacing: -0.06em;
+    letter-spacing: -0.065em;
 }
 
-.video-category-page .video-category-header-grid h1 span {
+
+.video-category-header-grid h1 span {
+
     color: #d4af37;
 }
 
 
 /* =========================================================
-   DETAIL INTRO
+   HERO INTRO
 ========================================================= */
 
-.video-category-page .video-category-intro {
+.video-category-intro {
+
     width: 100%;
 
     max-width: 510px;
@@ -746,10 +313,13 @@
     padding-top: 45px;
 }
 
-.video-category-page .video-category-intro p {
+
+.video-category-intro p {
+
     margin: 0;
 
-    color: rgba(255, 255, 255, 0.78);
+    color:
+        rgba(255, 255, 255, 0.78);
 
     font-size: 17px;
 
@@ -760,15 +330,16 @@
 
 
 /* =========================================================
-   DETAIL CONTENT
+   CONTENT AREA
 ========================================================= */
 
-.video-category-page>.video-category-content {
+.video-category-content {
+
     width: 100%;
 
     max-width: 1500px;
 
-    margin: 58px auto 0;
+    margin: 65px auto 0;
 }
 
 
@@ -777,17 +348,19 @@
 ========================================================= */
 
 .video-category-toolbar {
+
     display: flex;
 
     align-items: center;
 
-    justify-content: flex-end;
+    justify-content: space-between;
 
     min-height: 45px;
 
     padding-bottom: 17px;
 
-    border-bottom: 1px solid #dfe6eb;
+    border-bottom:
+        1px solid #dfe6eb;
 }
 
 
@@ -796,6 +369,7 @@
 ========================================================= */
 
 .video-count {
+
     color: #c99f20;
 
     font-size: 11px;
@@ -813,14 +387,15 @@
 ========================================================= */
 
 .category-video-grid {
+
     display: grid;
 
     grid-template-columns:
-        repeat(3, minmax(0, 1fr));
+        repeat(2, minmax(0, 1fr));
 
-    gap: 26px;
+    gap: 30px;
 
-    padding-top: 30px;
+    padding-top: 32px;
 }
 
 
@@ -829,38 +404,46 @@
 ========================================================= */
 
 .category-video-card {
+
+    position: relative;
+
     overflow: hidden;
 
-    border: 1px solid #dfe7ec;
+    border:
+        1px solid #dfe7ec;
 
-    border-radius: 18px;
+    border-radius: 20px;
 
     background: #ffffff;
 
     box-shadow:
-        0 10px 30px rgba(16, 42, 67, 0.045);
+        0 10px 35px rgba(16, 42, 67, 0.045);
 
     transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
 }
 
+
 .category-video-card:hover {
-    transform: translateY(-5px);
+
+    transform:
+        translateY(-6px);
 
     border-color: #d4af37;
 
     box-shadow:
-        0 20px 45px rgba(16, 42, 67, 0.1);
+        0 22px 50px rgba(16, 42, 67, 0.12);
 }
 
 
 /* =========================================================
-   VIDEO IMAGE
+   IMAGE
 ========================================================= */
 
 .category-video-image {
+
     position: relative;
 
     width: 100%;
@@ -872,19 +455,26 @@
     background: #102f4b;
 }
 
+
 .category-video-image img {
+
     display: block;
 
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
 
-    transition: transform 0.45s ease;
+    transition:
+        transform 0.5s ease;
 }
 
+
 .category-video-card:hover .category-video-image img {
-    transform: scale(1.045);
+
+    transform:
+        scale(1.045);
 }
 
 
@@ -893,14 +483,17 @@
 ========================================================= */
 
 .category-video-overlay {
+
     position: absolute;
 
     inset: 0;
 
     background:
         linear-gradient(to top,
-            rgba(7, 31, 52, 0.58),
-            rgba(7, 31, 52, 0.04) 65%);
+            rgba(7, 31, 52, 0.68),
+            rgba(7, 31, 52, 0.08) 65%);
+
+    pointer-events: none;
 }
 
 
@@ -909,21 +502,28 @@
 ========================================================= */
 
 .category-video-play {
+
     position: absolute;
 
     left: 50%;
+
     top: 50%;
 
-    width: 58px;
-    height: 58px;
+    width: 62px;
+
+    height: 62px;
 
     display: flex;
 
     align-items: center;
+
     justify-content: center;
 
     transform:
         translate(-50%, -50%);
+
+    border:
+        1px solid rgba(255, 255, 255, 0.6);
 
     border-radius: 50%;
 
@@ -932,18 +532,31 @@
     color: #102f4b;
 
     box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.18);
+        0 12px 30px rgba(0, 0, 0, 0.2);
 
     transition:
-        transform 0.25s ease,
-        background 0.25s ease;
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
 }
 
+
 .category-video-card:hover .category-video-play {
+
     transform:
         translate(-50%, -50%) scale(1.08);
 
     background: #d4af37;
+
+    color: #102f4b;
+}
+
+
+.category-video-play svg {
+
+    width: 20px;
+
+    height: 20px;
 }
 
 
@@ -952,17 +565,20 @@
 ========================================================= */
 
 .category-video-duration {
+
     position: absolute;
 
-    right: 15px;
-    bottom: 14px;
+    right: 16px;
 
-    padding: 6px 9px;
+    bottom: 15px;
+
+    padding:
+        6px 9px;
 
     border-radius: 5px;
 
     background:
-        rgba(7, 31, 52, 0.78);
+        rgba(7, 31, 52, 0.82);
 
     color: #ffffff;
 
@@ -975,45 +591,67 @@
 
 
 /* =========================================================
-   VIDEO CONTENT
+   CARD CONTENT
 ========================================================= */
 
 .category-video-content {
-    padding: 24px 26px 27px;
+
+    padding:
+        26px 28px 30px;
 }
 
+
+/* =========================================================
+   CATEGORY LABEL
+========================================================= */
+
 .category-video-label {
+
     display: block;
 
-    margin-bottom: 9px;
+    margin-bottom: 10px;
 
     color: #c99f20;
 
-    font-size: 11px;
+    font-size: 10px;
 
     font-weight: 800;
 
-    letter-spacing: 0.16em;
+    letter-spacing: 0.18em;
 
     text-transform: uppercase;
 }
 
+
+/* =========================================================
+   VIDEO TITLE
+========================================================= */
+
 .category-video-content h2 {
-    margin: 0 0 10px;
+
+    margin:
+        0 0 12px;
 
     color: #102a43;
 
-    font-size: clamp(21px, 2vw, 29px);
+    font-size:
+        clamp(23px, 2.2vw, 31px);
 
     font-weight: 800;
 
-    line-height: 1.12;
+    line-height: 1.1;
 
-    letter-spacing: -0.04em;
+    letter-spacing: -0.045em;
 }
 
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
 .category-video-content p {
-    max-width: 650px;
+
+    max-width: 720px;
 
     margin: 0;
 
@@ -1028,17 +666,18 @@
 
 
 /* =========================================================
-   WATCH
+   WATCH BUTTON
 ========================================================= */
 
 .category-video-watch {
+
     display: inline-flex;
 
     align-items: center;
 
     gap: 9px;
 
-    margin-top: 20px;
+    margin-top: 21px;
 
     padding: 0;
 
@@ -1048,13 +687,15 @@
 
     color: #102f4b;
 
-    font-family: "Manrope", sans-serif;
+    font-family:
+        "Manrope",
+        sans-serif;
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 800;
 
-    letter-spacing: 0.1em;
+    letter-spacing: 0.12em;
 
     text-transform: uppercase;
 
@@ -1065,10 +706,20 @@
         gap 0.2s ease;
 }
 
+
 .category-video-watch:hover {
+
     color: #c99f20;
 
     gap: 13px;
+}
+
+
+.category-video-watch svg {
+
+    width: 18px;
+
+    height: 18px;
 }
 
 
@@ -1077,41 +728,55 @@
 ========================================================= */
 
 .video-category-no-content {
-    padding: 80px 20px;
+
+    padding:
+        90px 20px;
 
     text-align: center;
 
-    border-bottom: 1px solid #dfe6eb;
+    border-bottom:
+        1px solid #dfe6eb;
 }
 
+
 .video-category-no-content span {
+
     color: #c99f20;
 
-    font-size: 12px;
+    font-size: 11px;
 
     font-weight: 800;
 
-    letter-spacing: 0.16em;
+    letter-spacing: 0.18em;
+
+    text-transform: uppercase;
 }
 
+
 .video-category-no-content h2 {
-    margin: 16px 0 8px;
+
+    margin:
+        17px 0 9px;
 
     color: #102a43;
 
-    font-size: 32px;
+    font-size: 34px;
 
     font-weight: 800;
 
-    letter-spacing: -0.04em;
+    letter-spacing: -0.045em;
 }
 
+
 .video-category-no-content p {
+
     margin: 0;
 
-    color: #6b879d;
+    color: #67839a;
 
     font-size: 15px;
+
+    line-height: 1.6;
 }
 
 
@@ -1120,6 +785,7 @@
 ========================================================= */
 
 .video-category-empty {
+
     width: 100%;
 
     max-width: 1500px;
@@ -1128,16 +794,20 @@
 
     margin: 0 auto;
 
-    padding: 55px 64px;
+    padding:
+        55px 64px;
 
-    border-radius: 0 0 34px 34px;
+    border-radius:
+        0 0 34px 34px;
 
     background: #123552;
 
     color: #ffffff;
 }
 
+
 .video-category-empty>span {
+
     color: #d4af37;
 
     font-size: 13px;
@@ -1145,14 +815,22 @@
     font-weight: 800;
 
     letter-spacing: 0.18em;
+
+    text-transform: uppercase;
 }
 
+
 .video-category-empty h1 {
-    margin: 35px 0;
+
+    margin:
+        35px 0;
 
     color: #ffffff;
 
-    font-size: clamp(50px, 6vw, 80px);
+    font-size:
+        clamp(50px, 6vw, 82px);
+
+    font-weight: 800;
 
     line-height: 0.95;
 
@@ -1164,47 +842,53 @@
    TABLET
 ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
 
-    .video-library-page,
     .video-category-page {
-        padding-right: 24px;
+
         padding-left: 24px;
+
+        padding-right: 24px;
     }
 
-    .video-library-hero,
-    .video-category-page .video-category-header {
-        padding-right: 42px;
-        padding-left: 42px;
+
+    .video-category-header {
+
+        padding-left: 44px;
+
+        padding-right: 44px;
     }
 
-    .video-hero-content,
+
     .video-category-header-grid {
+
         grid-template-columns:
             minmax(0, 1fr) minmax(260px, 0.7fr);
 
         gap: 45px;
     }
 
-    .video-hero-left h1 {
-        font-size: clamp(54px, 7vw, 78px);
+
+    .video-category-header-grid h1 {
+
+        font-size:
+            clamp(52px, 6.5vw, 74px);
     }
 
-    .video-category-page .video-category-header-grid h1 {
-        font-size: clamp(52px, 6.5vw, 74px);
+
+    .video-category-intro {
+
+        max-width: 400px;
+
+        padding-top: 30px;
     }
 
-    .video-library-page .video-category-row {
-        grid-template-columns:
-            50px 50px minmax(0, 1fr) 46px;
-
-        gap: 16px;
-    }
 
     .category-video-grid {
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr));
+
+        gap: 22px;
     }
+
 }
 
 
@@ -1214,30 +898,27 @@
 
 @media (max-width: 750px) {
 
-    .video-library-page,
     .video-category-page {
-        padding-top: 88px;
 
-        padding-right: 18px;
-        padding-left: 18px;
-
-        padding-bottom: 70px;
+        padding:
+            88px 18px 70px;
     }
 
 
-    /* HERO */
+    .video-category-header {
 
-    .video-library-hero,
-    .video-category-page .video-category-header {
         min-height: auto;
 
-        padding: 32px 28px 48px;
+        padding:
+            32px 28px 48px;
 
-        border-radius: 0 0 28px 28px;
+        border-radius:
+            0 0 28px 28px;
     }
 
-    .video-hero-content,
+
     .video-category-header-grid {
+
         grid-template-columns: 1fr;
 
         gap: 30px;
@@ -1245,110 +926,100 @@
         padding-top: 55px;
     }
 
-    .video-hero-eyebrow,
-    .video-category-page .video-category-eyebrow {
+
+    .video-category-eyebrow {
+
         margin-bottom: 22px;
 
         font-size: 11px;
     }
 
-    .video-hero-left h1 {
-        font-size: clamp(48px, 12vw, 68px);
 
-        line-height: 0.95;
+    .video-category-eyebrow i {
+
+        width: 38px;
     }
 
-    .video-category-page .video-category-header-grid h1 {
-        font-size: clamp(46px, 11vw, 68px);
+
+    .video-category-header-grid h1 {
+
+        font-size:
+            clamp(46px, 11vw, 68px);
+
+        line-height: 0.94;
     }
 
-    .video-hero-right,
-    .video-category-page .video-category-intro {
+
+    .video-category-intro {
+
         justify-self: start;
 
-        max-width: 520px;
+        max-width: 540px;
 
         padding-top: 0;
     }
 
-    .video-hero-right p,
-    .video-category-page .video-category-intro p {
+
+    .video-category-intro p {
+
         font-size: 15px;
 
         line-height: 1.6;
     }
 
 
-    /* CATEGORY */
+    .video-category-content {
 
-    .video-category-section {
-        margin-top: 44px;
-    }
-
-    .video-category-heading {
-        gap: 18px;
-
-        padding-bottom: 15px;
-    }
-
-    .video-category-heading span {
-        font-size: 11px;
-
-        letter-spacing: 0.15em;
+        margin-top: 48px;
     }
 
 
-    /* CATEGORY ROW */
+    .video-category-toolbar {
 
-    .video-library-page .video-category-row {
-        grid-template-columns:
-            34px 44px minmax(0, 1fr) 40px;
+        min-height: 40px;
 
-        gap: 10px;
-
-        min-height: 115px;
-
-        padding: 20px 0;
+        padding-bottom: 14px;
     }
 
-    .video-library-page .video-category-number {
-        font-size: 13px;
-    }
-
-    .video-library-page .video-category-icon {
-        width: 42px;
-        height: 42px;
-    }
-
-    .video-library-page .video-category-content h2 {
-        font-size: 21px;
-    }
-
-    .video-library-page .video-category-content p {
-        font-size: 12px;
-
-        line-height: 1.5;
-    }
-
-    .video-library-page .video-category-arrow {
-        width: 40px;
-        height: 40px;
-    }
-
-
-    /* DETAIL */
-
-    .video-category-page>.video-category-content {
-        margin-top: 44px;
-    }
 
     .category-video-grid {
+
         grid-template-columns: 1fr;
 
         gap: 22px;
 
         padding-top: 25px;
     }
+
+
+    .category-video-content {
+
+        padding:
+            23px 22px 26px;
+    }
+
+
+    .category-video-content h2 {
+
+        font-size: 24px;
+    }
+
+
+    .category-video-content p {
+
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+
+    .category-video-play {
+
+        width: 56px;
+
+        height: 56px;
+    }
+
 }
 
 
@@ -1358,94 +1029,141 @@
 
 @media (max-width: 500px) {
 
-    .video-library-page,
     .video-category-page {
-        padding-top: 76px;
 
-        padding-right: 14px;
-        padding-left: 14px;
+        padding:
+            76px 14px 60px;
     }
 
-    .video-library-hero,
-    .video-category-page .video-category-header {
-        padding: 27px 20px 40px;
+
+    .video-category-header {
+
+        padding:
+            28px 20px 40px;
     }
 
-    .video-back-link,
-    .video-category-page .video-category-back {
+
+    .video-category-back {
+
         font-size: 10px;
 
         letter-spacing: 0.11em;
     }
 
-    .video-hero-content,
+
     .video-category-header-grid {
+
         padding-top: 45px;
     }
 
-    .video-hero-left h1 {
-        font-size: 48px;
-    }
 
-    .video-category-page .video-category-header-grid h1 {
+    .video-category-header-grid h1 {
+
         font-size: 45px;
     }
 
-    .video-library-page .video-category-row {
-        grid-template-columns:
-            28px 38px minmax(0, 1fr) 36px;
 
-        gap: 7px;
+    .video-category-intro p {
 
-        min-height: 110px;
+        font-size: 14px;
     }
 
-    .video-library-page .video-category-icon {
-        width: 38px;
-        height: 38px;
+
+    .video-category-content {
+
+        margin-top: 40px;
     }
 
-    .video-library-page .video-category-icon svg {
-        width: 19px;
-        height: 19px;
-    }
-
-    .video-library-page .video-category-content h2 {
-        font-size: 18px;
-
-        line-height: 1.1;
-    }
-
-    .video-library-page .video-category-content p {
-        font-size: 11px;
-
-        line-height: 1.45;
-    }
-
-    .video-library-page .video-category-arrow {
-        width: 36px;
-        height: 36px;
-    }
-
-    .video-library-page .video-category-arrow svg {
-        width: 18px;
-        height: 18px;
-    }
 
     .category-video-content {
-        padding: 21px 20px 24px;
+
+        padding:
+            21px 19px 24px;
     }
 
+
+    .category-video-label {
+
+        font-size: 9px;
+    }
+
+
     .category-video-content h2 {
+
         font-size: 21px;
     }
 
+
     .category-video-content p {
-        font-size: 13px;
+
+        font-size: 12px;
     }
 
+
     .category-video-play {
+
         width: 50px;
+
         height: 50px;
     }
+
+
+    .category-video-duration {
+
+        right: 11px;
+
+        bottom: 11px;
+
+        font-size: 9px;
+    }
+
+
+    .video-category-empty {
+
+        min-height: 450px;
+
+        padding:
+            40px 24px;
+    }
+
+
+    .video-category-empty h1 {
+
+        font-size: 45px;
+    }
+
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.video-category-back:focus-visible,
+.category-video-card:focus-visible,
+.category-video-watch:focus-visible {
+
+    outline:
+        3px solid rgba(212, 175, 55, 0.7);
+
+    outline-offset: 4px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .video-category-back,
+    .video-category-back svg,
+    .category-video-card,
+    .category-video-image img,
+    .category-video-play,
+    .category-video-watch {
+
+        transition: none !important;
+    }
+
 }

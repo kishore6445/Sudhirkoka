@@ -249,7 +249,7 @@ function Insights() {
 
                         <h2 className="insights-heading">
 
-                            Leadership is not learned once.
+                            Excellence is not learned once.
 
                             <br />
 
@@ -266,7 +266,7 @@ function Insights() {
 
                         <p className="insights-description">
 
-                            Practical leadership ideas, articles,
+                            Practical WorkPlace & leadership ideas, articles,
                             videos and reflections drawn from decades
                             of working with organisations.
 
@@ -277,7 +277,7 @@ function Insights() {
 
                     {/* Browse All */}
 
-                    <div className="insights-header-action">
+                    {/* <div className="insights-header-action">
 
                         <Link to="/insights/videos">
 
@@ -289,7 +289,7 @@ function Insights() {
 
                         </Link>
 
-                    </div>
+                    </div> */}
 
                 </div>
 

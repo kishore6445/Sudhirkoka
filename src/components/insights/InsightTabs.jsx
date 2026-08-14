@@ -1,9 +1,11 @@
 import {
-    PlayCircle,
     FileText,
     MessageCircle,
     Zap,
 } from "lucide-react";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 import { Link } from "react-router-dom";
 
@@ -14,31 +16,32 @@ const tabs = [
     {
         id: "videos",
         label: "Videos",
-        icon: PlayCircle,
         path: "/insights/videos",
+        type: "youtube",
     },
     {
         id: "articles",
         label: "Articles",
-        icon: FileText,
         path: "/insights/articles",
+        icon: FileText,
     },
     {
         id: "reflections",
         label: "Reflections",
-        icon: MessageCircle,
         path: "/insights/reflections",
+        icon: MessageCircle,
     },
     {
         id: "quick-bites",
         label: "Quick Bites",
-        icon: Zap,
         path: "/insights/quick-bites",
+        icon: Zap,
     },
 ];
 
 
 function InsightTabs() {
+
     return (
         <div className="insight-tabs-wrapper">
 
@@ -56,15 +59,32 @@ function InsightTabs() {
                             key={tab.id}
                             to={tab.path}
                             className="insight-tab"
+                            data-label={tab.label}
+                            aria-label={tab.label}
                         >
 
-                            <Icon
-                                className="insight-tab-icon"
-                                size={25}
-                                strokeWidth={1.8}
-                            />
+                            <span className="insight-tab-icon-wrap">
 
-                            <span>
+                                {tab.type === "youtube" ? (
+
+                                    <FontAwesomeIcon
+                                        icon={faYoutube}
+                                        className="insight-tab-youtube"
+                                    />
+
+                                ) : (
+
+                                    <Icon
+                                        className="insight-tab-icon"
+                                        size={25}
+                                        strokeWidth={1.8}
+                                    />
+
+                                )}
+
+                            </span>
+
+                            <span className="insight-tab-label">
                                 {tab.label}
                             </span>
 
