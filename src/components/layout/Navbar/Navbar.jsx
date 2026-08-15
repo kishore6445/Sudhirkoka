@@ -1,7 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-
+import logo from "../../../assets/images/logo/logo.png";
 import Button from "../../common/Button/Button";
 
 import "./Navbar.css";
@@ -89,7 +89,7 @@ function Navbar({ light = false }) {
     onClick={closeMenu}
 >
     <img
-        src="../../public/images/logo/logo.png"
+        src={logo}
         alt="Winspiring Minds"
         className="navbar__brand-logo"
     />

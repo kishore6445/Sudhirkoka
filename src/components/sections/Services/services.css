@@ -4,7 +4,7 @@
 
 .services-section {
   width: 100%;
-  background: #f8f4ea;
+  background: #ffffff;
   padding: 64px 0 72px;
 }
 
@@ -223,7 +223,7 @@
 
   flex-direction: column;
 
-  background: #ffffff;
+  background: #f8f1dd;
 
   border: 1px solid rgba(16, 42, 67, 0.08);
 

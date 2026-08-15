@@ -3,12 +3,14 @@ import { Link } from "react-router-dom";
 
 import InsightTabs from "../../components/insights/InsightTabs";
 import "../../styles/insights.css";
-
-
+import featuredVideo from "../../assets/images/insights/featured-video.jpg"
+import ourstory from "../../assets/images/insights/our-story.jpg"
+import smallvideo1 from "../../assets/images/insights/video-2.jpg"
+import smallvideo2 from "../../assets/images/insights/video-3.jpg"
 const videos = [
     {
         id: 1,
-        image: "/images/insights/featured-video.jpg",
+        image: featuredVideo,
         category: "LEADERSHIP",
         title: "Why Great Performers Don't Always Become Great Leaders",
         description:
@@ -18,7 +20,7 @@ const videos = [
     },
     {
         id: 2,
-        image: "/images/insights/video-2.jpg",
+        image: smallvideo1,
         category: "ORGANISATION",
         title: "Every Business Problem Has a People Story",
         description:
@@ -27,7 +29,7 @@ const videos = [
     },
     {
         id: 3,
-        image: "/images/insights/video-3.jpg",
+        image: smallvideo2,
         category: "TEAMS",
         title: "The Leadership Mistakes That Destroy Team Performance",
         description:
@@ -151,7 +153,7 @@ function StoryPanel() {
                 <div className="story-video">
 
                     <img
-                        src="/images/insights/our-story.jpg"
+                        src= {ourstory}
                         alt="Our story"
                     />
 

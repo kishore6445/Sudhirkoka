@@ -5,7 +5,7 @@ function StoryPanel({ onShareStory }) {
             <div className="story-panel-top">
 
                 <span className="story-eyebrow">
-                    OUR STORY
+                    YOUR STORY
                 </span>
 
                 <h2>
@@ -35,12 +35,13 @@ function StoryPanel({ onShareStory }) {
 
                     <p className="story-main-text">
                         Have a story, thought or experience worth
-                        sharing with our community?
-                    </p>
-
-                    <p className="story-secondary-text">
+                        sharing with our community?<br/>
                         Selected stories may be featured on our website.
                     </p>
+
+                    {/* <p >
+                        Selected stories may be featured on our website.
+                    </p> */}
 
                 </div>
 
