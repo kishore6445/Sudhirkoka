@@ -111,79 +111,6 @@ function ReflectionCategory() {
 
 
             {/* =================================================
-                HERO
-            ================================================= */}
-
-            <section className="reflection-category-hero">
-
-                <div className="reflection-category-container">
-
-
-                    {/* BACK */}
-
-                    <Link
-                        to="/insights/reflections"
-                        className="reflection-category-back"
-                    >
-
-                        <ArrowLeft size={17} />
-
-                        <span>
-                            Back to Reflections
-                        </span>
-
-                    </Link>
-
-
-                    {/* CATEGORY */}
-
-                    <div className="reflection-category-eyebrow">
-
-                        <span>
-                            {currentCategory.number}
-                        </span>
-
-                        <i />
-
-                        <span>
-                            REFLECTIONS
-                        </span>
-
-                    </div>
-
-
-                    {/* HERO GRID */}
-
-                    <div className="reflection-category-hero-grid">
-
-
-                        <div className="reflection-category-heading">
-
-                            <h1>
-                                {currentCategory.title}
-                            </h1>
-
-                            <div className="reflection-category-title-line" />
-
-                        </div>
-
-
-                        <div className="reflection-category-intro">
-
-                            <p>
-                                {currentCategory.description}
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            {/* =================================================
                 REFLECTIONS
             ================================================= */}
 
@@ -191,6 +118,30 @@ function ReflectionCategory() {
 
                 <div className="reflection-category-container">
 
+                    <div className="reflection-category-context">
+
+                        <Link
+                            to="/insights/reflections"
+                            className="reflection-category-back"
+                        >
+                            <ArrowLeft size={17} />
+                            <span>Back to Reflections</span>
+                        </Link>
+
+                        <div className="reflection-category-context-main">
+                            <div>
+                                <div className="reflection-category-eyebrow">
+                                    <span>{currentCategory.number}</span>
+                                    <i />
+                                    <span>REFLECTIONS</span>
+                                </div>
+
+                                <h1>{currentCategory.title}</h1>
+                                <p>{currentCategory.description}</p>
+                            </div>
+
+                        </div>
+                    </div>
 
                     {/* SECTION HEADER */}
 

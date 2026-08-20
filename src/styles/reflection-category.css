@@ -5,12 +5,11 @@
 .reflection-category-page {
     width: 100%;
     min-height: 100vh;
-    margin-top:92px;
+    margin-top: 92px;
     color: #102d4a;
-
     background: #ffffff;
-
     overflow: hidden;
+    font-family: "Manrope", sans-serif;
 }
 
 
@@ -188,9 +187,47 @@
 ========================================================= */
 
 .reflection-category-content {
-    padding: 100px 0 110px;
-
+    padding: 34px 0 110px;
     background: #ffffff;
+}
+
+
+/* =========================================================
+   CATEGORY CONTEXT
+========================================================= */
+
+.reflection-category-context {
+    padding-bottom: 58px;
+    border-bottom: 1px solid #e2e7eb;
+}
+
+.reflection-category-context-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: end;
+    gap: 40px;
+    margin-top: 32px;
+}
+
+.reflection-category-context .reflection-category-eyebrow {
+    margin-top: 0;
+}
+
+.reflection-category-context-main h1 {
+    margin: 18px 0 14px;
+    color: #102d4a;
+    font-size: clamp(38px, 5vw, 62px);
+    line-height: 1;
+    letter-spacing: -0.055em;
+    font-weight: 700;
+}
+
+.reflection-category-context-main p {
+    max-width: 640px;
+    margin: 0;
+    color: #647c92;
+    font-size: 16px;
+    line-height: 1.7;
 }
 
 
@@ -1034,34 +1071,28 @@
     }
 
 
-    /* HERO */
-
-    .reflection-category-hero {
-        padding-top: 28px;
-
-        padding-bottom: 65px;
-    }
-
-
-    .reflection-category-eyebrow {
-        margin-top: 48px;
-    }
-
-
-    .reflection-category-heading h1 {
-        font-size: 54px;
-    }
-
-
-    .reflection-category-intro p {
-        font-size: 15px;
-    }
-
-
     /* CONTENT */
 
     .reflection-category-content {
-        padding: 70px 0 75px;
+        padding: 28px 0 75px;
+    }
+
+    .reflection-category-context {
+        padding-bottom: 42px;
+    }
+
+    .reflection-category-context-main {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        margin-top: 38px;
+    }
+
+    .reflection-category-context-main h1 {
+        font-size: 44px;
+    }
+
+    .reflection-category-context-main p {
+        font-size: 15px;
     }
 
 
