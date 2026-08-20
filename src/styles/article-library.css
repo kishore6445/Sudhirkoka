@@ -640,7 +640,8 @@
 .article-category-top {
     position: relative;
     z-index: 2;
-    padding-bottom:0px !important;
+    padding-top:0px !important;
+    padding-bottom:0px;
     display: flex;
     align-items: center;
 
