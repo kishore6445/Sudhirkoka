@@ -277,7 +277,7 @@ function QuickBites() {
                             </p>
 
 
-                            <div className="quick-bites-count">
+                            {/* <div className="quick-bites-count">
 
                                 <strong>
                                     {quickBites.length}
@@ -287,7 +287,7 @@ function QuickBites() {
                                     QUICK BITES
                                 </span>
 
-                            </div>
+                            </div> */}
 
                         </div>
 
@@ -321,24 +321,19 @@ function QuickBites() {
 
                             <h2>
 
-                                A few minutes can
-
-                                <br />
-
-                                <em>
-                                    change perspective.
-                                </em>
+                                A few minutes can change perspective.
+                                
 
                             </h2>
 
                         </div>
 
 
-                        <p>
+                        {/* <p>
                             No categories. No long commitments.
                             Just pick something that catches
                             your attention.
-                        </p>
+                        </p> */}
 
                     </div>
 

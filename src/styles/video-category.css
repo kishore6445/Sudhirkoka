@@ -23,7 +23,7 @@
 
 .vc-container,
 .vc-hero-inner {
-    width: min(1240px, calc(100% - 80px));
+    width: min(1200px, calc(100% - 64px));
     margin: 0 auto;
 }
 
@@ -881,7 +881,7 @@
 
     letter-spacing: -0.035em;
 
-    font-weight: 800;
+    font-weight: 790;
 
     transition:
         color 0.25s ease;

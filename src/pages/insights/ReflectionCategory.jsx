@@ -111,10 +111,10 @@ function ReflectionCategory() {
 
 
             {/* =================================================
-                HERO
+                REFLECTIONS IN THIS CATEGORY
             ================================================= */}
 
-            <section className="reflection-category-hero">
+            <section className="reflection-category-content">
 
                 <div className="reflection-category-container">
 
@@ -126,7 +126,7 @@ function ReflectionCategory() {
                         className="reflection-category-back"
                     >
 
-                        <ArrowLeft size={17} />
+                        <ArrowLeft size={16} />
 
                         <span>
                             Back to Reflections
@@ -135,83 +135,51 @@ function ReflectionCategory() {
                     </Link>
 
 
-                    {/* CATEGORY */}
-
-                    <div className="reflection-category-eyebrow">
-
-                        <span>
-                            {currentCategory.number}
-                        </span>
-
-                        <i />
-
-                        <span>
-                            REFLECTIONS
-                        </span>
-
-                    </div>
-
-
-                    {/* HERO GRID */}
-
-                    <div className="reflection-category-hero-grid">
-
-
-                        <div className="reflection-category-heading">
-
-                            <h1>
-                                {currentCategory.title}
-                            </h1>
-
-                            <div className="reflection-category-title-line" />
-
-                        </div>
-
-
-                        <div className="reflection-category-intro">
-
-                            <p>
-                                {currentCategory.description}
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </section>
-
-
-            {/* =================================================
-                REFLECTIONS
-            ================================================= */}
-
-            <section className="reflection-category-content">
-
-                <div className="reflection-category-container">
-
-
-                    {/* SECTION HEADER */}
+                    {/* SECTION HEADING */}
 
                     <div className="reflection-category-section-heading">
 
                         <div>
 
-                            <span>
-                                REFLECTIONS IN THIS CATEGORY
-                            </span>
+                            <div className="reflection-category-eyebrow">
 
-                            <h2>
-                                Ideas to pause
+                                {/* <span>
+                                    {currentCategory.number}
+                                </span> */}
+
+                                <i />
+
+                                <span>
+                                    REFLECTIONS
+                                </span>
+
+                            </div>
+
+
+                            {/* <span className="reflection-category-label">
+                                REFLECTIONS IN THIS CATEGORY
+                            </span> */}
+
+
+                            <h1>
+                                Reflections
                                 <br />
-                                <em>and consider.</em>
-                            </h2>
+                                <span>
+                                    worth pausing for.
+                                </span>
+                            </h1>
+
+
+                            {/* <p className="reflection-category-description">
+                                {currentCategory.description}
+                            </p> */}
 
                         </div>
 
 
-                        <div className="reflection-category-count">
+                        {/* COUNT */}
+
+                        {/* <div className="reflection-category-count">
 
                             <strong>
                                 {categoryReflections.length}
@@ -220,10 +188,11 @@ function ReflectionCategory() {
                             <span>
                                 {categoryReflections.length === 1
                                     ? "REFLECTION"
-                                    : "REFLECTIONS"}
+                                    : "REFLECTIONS"
+                                }
                             </span>
 
-                        </div>
+                        </div> */}
 
                     </div>
 
@@ -239,12 +208,15 @@ function ReflectionCategory() {
 
                                     <article
                                         key={reflection.id}
-                                        className={`reflection-category-card ${
-                                            index === 0
-                                                ? "reflection-category-card--featured"
-                                                : ""
-                                        }`}
+                                        className={
+                                            `reflection-category-card ${
+                                                index === 0
+                                                    ? "reflection-category-card--featured"
+                                                    : ""
+                                            }`
+                                        }
                                     >
+
 
                                         {/* QUOTE ICON */}
 
@@ -263,7 +235,9 @@ function ReflectionCategory() {
                                         <div className="reflection-category-card-top">
 
                                             <span>
-                                                {String(index + 1).padStart(2, "0")}
+                                                {String(
+                                                    index + 1
+                                                ).padStart(2, "0")}
                                             </span>
 
                                             <span>
@@ -330,10 +304,6 @@ function ReflectionCategory() {
 
                     ) : (
 
-                        /* =================================================
-                           EMPTY STATE
-                        ================================================= */
-
                         <div className="reflection-category-empty">
 
                             <Quote size={40} />
@@ -376,9 +346,10 @@ function ReflectionCategory() {
                         </span>
 
                         <h2>
-                            More perspectives
-                            <br />
-                            <em>to sit with.</em>
+                            More perspectives 
+                            
+                                 to <span>explore.</span> 
+                            
                         </h2>
 
                     </div>
@@ -419,7 +390,7 @@ function ReflectionCategory() {
 
 
                                         <ArrowRight
-                                            size={19}
+                                            size={18}
                                         />
 
                                     </Link>

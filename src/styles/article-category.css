@@ -16,7 +16,9 @@
     font-family: "Manrope", sans-serif;
 }
 
-
+.article-category-page{
+    margin-top:130px;
+}
 /* =========================================================
    CONTAINER
 ========================================================= */
@@ -662,7 +664,7 @@
         "Times New Roman",
         serif;
 
-    font-size: clamp(38px,
+    font-size: clamp(3px,
             4vw,
             52px);
 
@@ -699,7 +701,231 @@
     gap: 24px;
 }
 
+/* =========================================================
+   ARTICLE CARDS
+========================================================= */
 
+.article-card {
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e7e9;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 28px rgba(16, 45, 74, 0.035);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+.article-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(212, 175, 55, 0.35);
+
+    box-shadow:
+        0 22px 45px rgba(16, 45, 74, 0.08);
+}
+
+
+/* =========================================================
+   ARTICLE IMAGE
+========================================================= */
+
+.article-card__image {
+    position: relative;
+
+    display: block;
+
+    aspect-ratio: 16 / 9;
+
+    overflow: hidden;
+
+    background: #102d4a;
+
+    text-decoration: none;
+}
+
+
+.article-card__image img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.55s ease;
+}
+
+
+.article-card:hover .article-card__image img {
+    transform: scale(1.045);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.article-card__overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(180deg,
+            transparent 45%,
+            rgba(5, 20, 35, 0.55));
+}
+
+
+/* =========================================================
+   READ TIME
+========================================================= */
+
+.article-card__read-time {
+    position: absolute;
+
+    right: 12px;
+    bottom: 12px;
+
+    padding: 6px 9px;
+
+    color: #ffffff;
+
+    background:
+        rgba(5, 20, 35, 0.82);
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ARTICLE CONTENT
+========================================================= */
+
+.article-card__content {
+    position: relative;
+
+    z-index: 2;
+
+    /* THIS IS THE IMPORTANT PART */
+    padding: 30px 32px 32px;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.article-card__category {
+    display: block;
+
+    margin-bottom: 11px;
+
+    color: #c69b18;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.article-card__title {
+    display: block;
+
+    text-decoration: none;
+}
+
+
+.article-card__title h3 {
+    margin: 0 0 12px;
+
+    color: #102d4a;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 23px;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.035em;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.article-card__content p {
+    max-width: 600px;
+
+    margin: 0 0 23px;
+
+    color: #72869a;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   READ ARTICLE LINK
+========================================================= */
+
+.article-card__link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #102d4a;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    transition:
+        gap 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.article-card__link:hover {
+    gap: 11px;
+
+    color: #b28710;
+}
 /* =========================================================
    EMPTY
 ========================================================= */
