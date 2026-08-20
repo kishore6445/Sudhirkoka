@@ -116,7 +116,7 @@ export default function ContactForm({ onSuccess }) {
           />
         </div>
 
-        <div className="contact-form__group">
+        {/* <div className="contact-form__group">
           <label>{fields.organization.label}</label>
 
           <input
@@ -126,9 +126,9 @@ export default function ContactForm({ onSuccess }) {
             placeholder={fields.organization.placeholder}
             onChange={handleChange}
           />
-        </div>
+        </div> */}
 
-        <div className="contact-form__group">
+        {/* <div className="contact-form__group">
           <label>{fields.designation.label}</label>
 
           <input
@@ -138,7 +138,7 @@ export default function ContactForm({ onSuccess }) {
             placeholder={fields.designation.placeholder}
             onChange={handleChange}
           />
-        </div>
+        </div> */}
 
         <div className="contact-form__group">
           <label>{fields.preferredDate.label}</label>

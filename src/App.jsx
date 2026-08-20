@@ -37,9 +37,11 @@ import VideoDetail from "./pages/insights/VideoDetail";
 
 import ArticleLibrary from "./pages/insights/ArticleLibrary";
 import ArticleCategory from "./pages/insights/ArticleCategory";
-
+import ArticleDetail from "./pages/insights/ArticleDetail"
 import ReflectionLibrary from "./pages/insights/ReflectionLibrary";
 import ReflectionCategory from "./pages/insights/ReflectionCategory";
+import ReflectionDetail from "./pages/insights/ReflectionDetail";
+import QuickBites from "./pages/insights/QuickBites";
 
 // =========================================================
 // SCROLL TO TOP
@@ -328,7 +330,14 @@ function App() {
                     path="/insights/articles/:category"
                     element={<ArticleCategoryPage />}
                 />
-
+                <Route
+    path="/insights/articles/:category/:articleId"
+    element={
+        
+                <ArticleDetail />
+           
+    }
+/>
 
                 {/* =================================================
                     REFLECTIONS
@@ -348,6 +357,31 @@ function App() {
                     path="/insights/reflections/:category"
                     element={<ReflectionCategoryPage />}
                 />
+<Route
+    path="/insights/reflections/:category/:reflectionId"
+    element={
+        
+                <ReflectionDetail />
+            
+
+           
+    }
+
+/>
+<Route
+    path="/insights/quick-bites"
+    element={
+        <>
+            <Navbar light />
+
+            <main>
+                <QuickBites />
+            </main>
+
+            <Footer />
+        </>
+    }
+/>
 
 
                 {/* =================================================

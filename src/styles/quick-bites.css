@@ -1,0 +1,1398 @@
+/* =========================================================
+   QUICK BITES
+   WEBSITE-WIDE DESIGN SYSTEM
+========================================================= */
+
+.quick-bites-page {
+    width: 100%;
+    min-height: 100vh;
+
+    margin-top: 92px;
+
+    overflow: hidden;
+
+    color: #102d4a;
+    background: #ffffff;
+
+    font-family: "Manrope", sans-serif;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.quick-bites-container {
+    width: min(1240px, calc(100% - 80px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.quick-bites-hero {
+    position: relative;
+
+    padding: 38px 0 85px;
+
+    background:
+        radial-gradient(circle at 80% 42%,
+            rgba(32, 76, 112, 0.28),
+            transparent 35%),
+        linear-gradient(120deg,
+            #020c1b 0%,
+            #06172b 55%,
+            #071d34 100%);
+
+    border-bottom: 1px solid #e8ecef;
+}
+
+
+/* subtle gold line */
+
+.quick-bites-hero::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 1px;
+
+    background:
+        linear-gradient(90deg,
+            transparent,
+            rgba(212, 175, 55, 0.45),
+            transparent);
+}
+
+
+/* =========================================================
+   BACK
+========================================================= */
+
+.quick-bites-back {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #64798c;
+
+    text-decoration: none;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+.quick-bites-back:hover {
+    color: #ffffff;
+
+    transform: translateX(-4px);
+}
+
+
+/* =========================================================
+   HERO GRID
+========================================================= */
+
+.quick-bites-hero-grid {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) minmax(300px, 0.55fr);
+
+    gap: 75px;
+
+    align-items: end;
+
+    margin-top: 62px;
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.quick-bites-eyebrow {
+    display: flex;
+    margin-top:45px;
+    padding-bottom:0px;
+    align-items: center;
+
+    gap: 11px;
+
+    color: #c69b18;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+.quick-bites-eyebrow i {
+    width: 34px;
+
+    height: 1px;
+
+    background: #d4af37;
+}
+
+
+/* =========================================================
+   HERO HEADING
+========================================================= */
+
+.quick-bites-hero-heading h1 {
+    max-width: 760px;
+
+    margin: 3px 0 0;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    /*
+       Smaller than Article Library
+       so Quick Bites feels lighter.
+    */
+
+    font-size: clamp(48px,
+            5vw,
+            68px);
+
+    line-height: 1;
+
+    letter-spacing: -0.055em;
+
+    font-weight: 700;
+}
+
+
+.quick-bites-hero-heading h1 span {
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   HERO INTRO
+========================================================= */
+
+.quick-bites-hero-intro {
+    padding-bottom: 5px;
+}
+
+
+.quick-bites-hero-intro p {
+    max-width: 440px;
+
+    margin: 0;
+
+    color: #687d90;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   COUNT
+========================================================= */
+
+.quick-bites-count {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 8px;
+
+    margin-top: 24px;
+
+    padding-top: 17px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+
+.quick-bites-count strong {
+    color: #ffffff;
+
+    font-size: 27px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.04em;
+}
+
+
+.quick-bites-count span {
+    color: #74889a;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.quick-bites-content {
+    padding: 92px 0 105px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.quick-bites-section-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    margin-bottom: 38px;
+}
+
+
+.quick-bites-section-heading>div>span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #c69b18;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.17em;
+}
+
+
+.quick-bites-section-heading h2 {
+    max-width: 680px;
+
+    margin: 0;
+
+    color: #102d4a;
+
+    font-family:
+        'Manrope',sans-serif;
+
+    /*
+       Smaller editorial heading
+    */
+
+    font-size: clamp(34px,
+            3.2vw,
+            46px);
+
+    line-height: 1.07;
+
+    letter-spacing: -0.045em;
+
+    font-weight: 600;
+}
+
+
+.quick-bites-section-heading h2 em {
+    /* color: #c69b18; */
+
+    /* font-style: italic; */
+
+    font-weight: 600;
+}
+
+
+.quick-bites-section-heading>p {
+    max-width: 320px;
+
+    margin: 0 0 3px;
+
+    color: #718497;
+
+    font-size: 13px;
+
+    line-height: 1.75;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.quick-bites-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,
+            minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.quick-bite-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e7e9;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 28px rgba(16,
+            45,
+            74,
+            0.035);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.quick-bite-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(212,
+            175,
+            55,
+            0.45);
+
+    box-shadow:
+        0 22px 45px rgba(16,
+            45,
+            74,
+            0.08);
+}
+
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.quick-bite-card__media {
+    position: relative;
+
+    height: 235px;
+
+    overflow: hidden;
+
+    background: #102d4a;
+}
+
+
+.quick-bite-card__media img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.6s ease;
+}
+
+
+.quick-bite-card:hover .quick-bite-card__media img {
+    transform: scale(1.045);
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.quick-bite-card__overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(180deg,
+            transparent 42%,
+            rgba(5,
+                20,
+                35,
+                0.68));
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   NUMBER
+========================================================= */
+
+.quick-bite-card__number {
+    position: absolute;
+
+    top: 16px;
+    left: 17px;
+
+    color: #ffffff;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   PLAY
+========================================================= */
+
+.quick-bite-card__play {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 56px;
+    height: 56px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    transform:
+        translate(-50%, -50%);
+
+    color: #102d4a;
+
+    background: #ffffff;
+
+    border: none;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 12px 30px rgba(0,
+            0,
+            0,
+            0.18);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.quick-bite-card:hover .quick-bite-card__play {
+    transform:
+        translate(-50%, -50%) scale(1.08);
+
+    background: #f6f1df;
+}
+
+
+.quick-bite-card__play:hover {
+    background: #d4af37;
+}
+
+
+/* =========================================================
+   DURATION
+========================================================= */
+
+.quick-bite-card__duration {
+    position: absolute;
+
+    right: 13px;
+    bottom: 13px;
+
+    padding: 6px 9px;
+
+    color: #ffffff;
+
+    background:
+        rgba(5,
+            20,
+            35,
+            0.82);
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.quick-bite-card__content {
+    position: relative;
+
+    padding: 22px 23px 23px;
+
+    background:
+        linear-gradient(145deg,
+            #ffffff,
+            #faf9f4);
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.quick-bite-card__label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 9px;
+
+    color: #c69b18;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.15em;
+}
+
+
+.quick-bite-card__label svg {
+    color: #d4af37;
+}
+
+
+/* =========================================================
+   CARD TITLE
+========================================================= */
+
+.quick-bite-card__content h2 {
+    min-height: 50px;
+
+    margin: 0;
+
+    color: #102d4a;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    /*
+       Intentionally smaller
+       than the other library cards.
+    */
+
+    font-size: 20px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.03em;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CARD ACTION
+========================================================= */
+
+.quick-bite-card__action {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    width: 100%;
+
+    margin-top: 19px;
+
+    padding: 13px 0 0;
+
+    color: #102d4a;
+
+    background: transparent;
+
+    border: none;
+
+    border-top: 1px solid #e3e7e8;
+
+    cursor: pointer;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.quick-bite-card__action:hover {
+    color: #b28710;
+}
+
+
+.quick-bite-card__action svg {
+    transition:
+        transform 0.25s ease;
+}
+
+
+.quick-bite-card__action:hover svg {
+    transform: translateX(4px);
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.quick-bites-empty {
+    padding: 70px 30px;
+
+    text-align: center;
+
+    background: #f8faf9;
+
+    border: 1px solid #e1e7e9;
+
+    border-radius: 18px;
+}
+
+
+.quick-bites-empty>span {
+    display: block;
+
+    margin-bottom: 11px;
+
+    color: #c69b18;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.quick-bites-empty h3 {
+    margin: 0 0 8px;
+
+    color: #102d4a;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 27px;
+}
+
+
+.quick-bites-empty p {
+    margin: 0;
+
+    color: #718497;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   BOTTOM CTA
+========================================================= */
+
+.quick-bites-bottom {
+    padding: 58px 0;
+
+    background:
+        linear-gradient(110deg,
+            #0c2945,
+            #102d4a);
+}
+
+
+.quick-bites-bottom-inner {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+.quick-bites-bottom-inner>div>span {
+    display: block;
+
+    margin-bottom: 10px;
+
+    color: #d4af37;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+
+.quick-bites-bottom h2 {
+    margin: 0;
+
+    color: #ffffff;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 35px;
+
+    line-height: 1.08;
+
+    letter-spacing: -0.04em;
+}
+
+
+.quick-bites-bottom h2 em {
+    color: #d4af37;
+
+    font-style: italic;
+
+    font-weight: 400;
+}
+
+
+.quick-bites-bottom-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 13px 19px;
+
+    color: #102d4a;
+
+    background: #ffffff;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.quick-bites-bottom-link:hover {
+    background: #d4af37;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   PLAYING STATE
+========================================================= */
+
+.quick-bite-card--playing .quick-bite-card__media {
+    background: #000000;
+}
+
+
+.quick-bite-card__youtube {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: none;
+
+    background: #000000;
+}
+
+
+/* =========================================================
+   VIDEO ERROR
+========================================================= */
+
+.quick-bite-card__video-error {
+    width: 100%;
+    min-height: 235px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    text-align: center;
+
+    color: #ffffff;
+
+    background: #071828;
+}
+
+
+.quick-bite-card__video-error-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 12px;
+
+    color: #102d4a;
+
+    background: #d4af37;
+
+    border-radius: 50%;
+}
+
+
+.quick-bite-card__video-error span {
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+}
+
+
+.quick-bite-card__video-error p {
+    max-width: 240px;
+
+    margin: 8px 0 0;
+
+    color: rgba(255,
+            255,
+            255,
+            0.65);
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.quick-bite-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background:
+        rgba(7,
+            24,
+            40,
+            0.88);
+
+    backdrop-filter: blur(8px);
+
+    animation:
+        quickBiteModalFadeIn 0.25s ease both;
+}
+
+
+/* =========================================================
+   MODAL BOX
+========================================================= */
+
+.quick-bite-modal__box {
+    position: relative;
+
+    width: min(900px, 100%);
+
+    overflow: hidden;
+
+    background: #ffffff;
+
+    border: 1px solid rgba(212,
+            175,
+            55,
+            0.22);
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 30px 90px rgba(0,
+            0,
+            0,
+            0.35);
+
+    animation:
+        quickBiteModalScaleIn 0.3s ease both;
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+.quick-bite-modal__close {
+    position: absolute;
+
+    top: 14px;
+    right: 14px;
+
+    z-index: 5;
+
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    background:
+        rgba(7,
+            24,
+            40,
+            0.78);
+
+    border: 1px solid rgba(255,
+            255,
+            255,
+            0.2);
+
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.quick-bite-modal__close:hover {
+    color: #102d4a;
+
+    background: #d4af37;
+
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   MODAL VIDEO
+========================================================= */
+
+.quick-bite-modal__video {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 9;
+
+    background: #071828;
+}
+
+
+.quick-bite-modal__video iframe {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    border: 0;
+}
+
+
+/* =========================================================
+   MODAL INFO
+========================================================= */
+
+.quick-bite-modal__info {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 25px;
+
+    padding: 21px 26px 24px;
+
+    background: #ffffff;
+}
+
+
+.quick-bite-modal__label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #c69b18;
+
+    font-size: 8px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.17em;
+}
+
+
+.quick-bite-modal__info h2 {
+    margin: 0;
+
+    color: #102d4a;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 21px;
+
+    line-height: 1.25;
+
+    letter-spacing: -0.03em;
+}
+
+
+.quick-bite-modal__duration {
+    flex-shrink: 0;
+
+    padding: 7px 10px;
+
+    color: #102d4a;
+
+    background: #f6f1df;
+
+    border-radius: 5px;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes quickBiteModalFadeIn {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+@keyframes quickBiteModalScaleIn {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(10px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0) scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .quick-bites-container {
+        width:
+            min(calc(100% - 50px),
+                760px);
+    }
+
+
+    .quick-bites-hero-grid {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+
+        margin-top: 60px;
+    }
+
+
+    .quick-bites-hero-intro p {
+        max-width: 650px;
+    }
+
+
+    .quick-bites-grid {
+        grid-template-columns:
+            repeat(2,
+                minmax(0, 1fr));
+    }
+
+
+    .quick-bites-section-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .quick-bites-section-heading>p {
+        max-width: 500px;
+
+        margin: 0;
+
+        text-align: left;
+    }
+
+
+    .quick-bites-bottom-inner {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 25px;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+    .quick-bites-page {
+        margin-top: 75px;
+    }
+
+
+    .quick-bites-container {
+        width: calc(100% - 30px);
+    }
+
+
+    .quick-bites-hero {
+        padding-top: 28px;
+
+        padding-bottom: 65px;
+    }
+
+
+    .quick-bites-hero-grid {
+        margin-top: 48px;
+    }
+
+
+    .quick-bites-hero-heading h1 {
+        font-size: 46px;
+
+        line-height: 1;
+    }
+
+
+    .quick-bites-hero-intro p {
+        font-size: 14px;
+
+        line-height: 1.75;
+    }
+
+
+    .quick-bites-content {
+        padding: 70px 0 80px;
+    }
+
+
+    .quick-bites-section-heading {
+        margin-bottom: 34px;
+    }
+
+
+    .quick-bites-section-heading h2 {
+        font-size: 34px;
+    }
+
+
+    .quick-bites-grid {
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+    }
+
+
+    .quick-bite-card {
+        border-radius: 16px;
+    }
+
+
+    .quick-bite-card__media {
+        height: 225px;
+    }
+
+
+    .quick-bite-card__content {
+        padding: 20px 21px 22px;
+    }
+
+
+    .quick-bite-card__content h2 {
+        min-height: auto;
+
+        font-size: 19px;
+    }
+
+
+    .quick-bites-bottom {
+        padding: 58px 0;
+    }
+
+
+    .quick-bites-bottom h2 {
+        font-size: 32px;
+    }
+
+
+    .quick-bite-modal {
+        padding: 12px;
+    }
+
+
+    .quick-bite-modal__info {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        padding: 19px;
+    }
+
+
+    .quick-bite-modal__info h2 {
+        font-size: 19px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .quick-bites-hero-heading h1 {
+        font-size: 43px;
+    }
+
+
+    .quick-bites-section-heading h2 {
+        font-size: 31px;
+    }
+
+
+    .quick-bite-card__media {
+        height: 215px;
+    }
+
+
+    .quick-bite-card__play {
+        width: 52px;
+        height: 52px;
+    }
+
+
+    .quick-bite-modal {
+        padding: 8px;
+    }
+
+}

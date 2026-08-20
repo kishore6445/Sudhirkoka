@@ -76,7 +76,7 @@ function InsightTabs() {
 
                                     <Icon
                                         className="insight-tab-icon"
-                                        size={25}
+                                        size={30}
                                         strokeWidth={1.8}
                                     />
 

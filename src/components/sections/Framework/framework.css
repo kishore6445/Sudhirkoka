@@ -8,7 +8,9 @@
     padding: 70px 0 90px;
     overflow: hidden;
 }
-
+.framework-section {
+    scroll-margin-top: 90px;
+}
 .framework-container {
     width: min(1200px, calc(100% - 64px));
     margin: 0 auto;

@@ -1,5 +1,14 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
+import {
+    ArrowLeft,
+    ArrowRight,
+    Quote,
+} from "lucide-react";
+
+import {
+    Link,
+    useParams,
+} from "react-router-dom";
+
 import { useEffect } from "react";
 
 import {
@@ -7,13 +16,17 @@ import {
     reflections,
 } from "../../data/insightsData";
 
-import "../../styles/insight-library.css";
+import "../../styles/reflection-category.css";
 
 
 function ReflectionCategory() {
 
     const { category } = useParams();
 
+
+    /* =====================================================
+       SCROLL TO TOP
+    ===================================================== */
 
     useEffect(() => {
 
@@ -26,26 +39,38 @@ function ReflectionCategory() {
     }, [category]);
 
 
-    const currentCategory = reflectionCategories.find(
-        (item) => item.id === category
-    );
+    /* =====================================================
+       CURRENT CATEGORY
+    ===================================================== */
+
+    const currentCategory =
+        reflectionCategories.find(
+            (item) => item.id === category
+        );
 
 
-    const categoryReflections = reflections.filter(
-        (reflection) => reflection.category === category
-    );
+    /* =====================================================
+       CATEGORY REFLECTIONS
+    ===================================================== */
+
+    const categoryReflections =
+        reflections.filter(
+            (reflection) =>
+                reflection.category === category
+        );
 
 
-    /* =========================================
+    /* =====================================================
        INVALID CATEGORY
-    ========================================= */
+    ===================================================== */
 
     if (!currentCategory) {
 
         return (
-            <main className="insight-category-page">
 
-                <section className="insight-category-empty">
+            <main className="reflection-category-page">
+
+                <section className="reflection-category-not-found">
 
                     <span>
                         REFLECTIONS
@@ -55,12 +80,22 @@ function ReflectionCategory() {
                         Category not found.
                     </h1>
 
+                    <p>
+                        The reflection category you're looking
+                        for doesn't exist or may have been moved.
+                    </p>
+
                     <Link
                         to="/insights/reflections"
-                        className="insight-category-back"
+                        className="reflection-category-back-button"
                     >
-                        <ArrowLeft size={19} />
-                        Back to Reflections
+
+                        <ArrowLeft size={17} />
+
+                        <span>
+                            Back to Reflections
+                        </span>
+
                     </Link>
 
                 </section>
@@ -71,69 +106,75 @@ function ReflectionCategory() {
 
 
     return (
-        <main className="insight-category-page">
+
+        <main className="reflection-category-page">
 
 
-            {/* =========================================
+            {/* =================================================
                 HERO
-            ========================================= */}
+            ================================================= */}
 
-            <section className="insight-category-hero">
+            <section className="reflection-category-hero">
 
-                <div className="insight-category-decoration" />
-
-
-                <Link
-                    to="/insights/reflections"
-                    className="insight-category-back"
-                >
-                    <ArrowLeft size={20} />
-
-                    <span>
-                        Back to Reflections
-                    </span>
-                </Link>
+                <div className="reflection-category-container">
 
 
-                <div className="insight-category-hero-content">
+                    {/* BACK */}
 
-                    <div>
+                    <Link
+                        to="/insights/reflections"
+                        className="reflection-category-back"
+                    >
 
-                        <div className="insight-category-eyebrow">
+                        <ArrowLeft size={17} />
 
-                            <span>
-                                04
-                            </span>
+                        <span>
+                            Back to Reflections
+                        </span>
 
-                            <i />
-
-                            <span>
-                                REFLECTIONS
-                            </span>
-
-                        </div>
+                    </Link>
 
 
-                        <h1>
+                    {/* CATEGORY */}
 
-                            {currentCategory.title}
+                    <div className="reflection-category-eyebrow">
 
-                            <br />
+                        <span>
+                            {currentCategory.number}
+                        </span>
 
-                            <span>
-                                Thoughts worth sitting with.
-                            </span>
+                        <i />
 
-                        </h1>
+                        <span>
+                            REFLECTIONS
+                        </span>
 
                     </div>
 
 
-                    <div className="insight-category-intro">
+                    {/* HERO GRID */}
 
-                        <p>
-                            {currentCategory.description}
-                        </p>
+                    <div className="reflection-category-hero-grid">
+
+
+                        <div className="reflection-category-heading">
+
+                            <h1>
+                                {currentCategory.title}
+                            </h1>
+
+                            <div className="reflection-category-title-line" />
+
+                        </div>
+
+
+                        <div className="reflection-category-intro">
+
+                            <p>
+                                {currentCategory.description}
+                            </p>
+
+                        </div>
 
                     </div>
 
@@ -142,95 +183,297 @@ function ReflectionCategory() {
             </section>
 
 
-            {/* =========================================
-                REFLECTION LIST
-            ========================================= */}
+            {/* =================================================
+                REFLECTIONS
+            ================================================= */}
 
-            <section className="insight-category-content">
+            <section className="reflection-category-content">
 
-                <div className="insight-category-section-heading">
+                <div className="reflection-category-container">
 
-                    <span>
-                        {categoryReflections.length}{" "}
-                        {categoryReflections.length === 1
-                            ? "REFLECTION"
-                            : "REFLECTIONS"}
-                    </span>
 
-                    <div />
+                    {/* SECTION HEADER */}
+
+                    <div className="reflection-category-section-heading">
+
+                        <div>
+
+                            <span>
+                                REFLECTIONS IN THIS CATEGORY
+                            </span>
+
+                            <h2>
+                                Ideas to pause
+                                <br />
+                                <em>and consider.</em>
+                            </h2>
+
+                        </div>
+
+
+                        <div className="reflection-category-count">
+
+                            <strong>
+                                {categoryReflections.length}
+                            </strong>
+
+                            <span>
+                                {categoryReflections.length === 1
+                                    ? "REFLECTION"
+                                    : "REFLECTIONS"}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    {/* REFLECTION LIST */}
+
+                    {categoryReflections.length > 0 ? (
+
+                        <div className="reflection-category-list">
+
+                            {categoryReflections.map(
+                                (reflection, index) => (
+
+                                    <article
+                                        key={reflection.id}
+                                        className={`reflection-category-card ${
+                                            index === 0
+                                                ? "reflection-category-card--featured"
+                                                : ""
+                                        }`}
+                                    >
+
+                                        {/* QUOTE ICON */}
+
+                                        <Quote
+                                            className="reflection-category-quote"
+                                            size={
+                                                index === 0
+                                                    ? 65
+                                                    : 45
+                                            }
+                                        />
+
+
+                                        {/* CARD TOP */}
+
+                                        <div className="reflection-category-card-top">
+
+                                            <span>
+                                                {String(index + 1).padStart(2, "0")}
+                                            </span>
+
+                                            <span>
+                                                REFLECTION
+                                            </span>
+
+                                        </div>
+
+
+                                        {/* QUOTE */}
+
+                                        <blockquote>
+                                            {reflection.quote}
+                                        </blockquote>
+
+
+                                        {/* FOOTER */}
+
+                                        <div className="reflection-category-card-footer">
+
+
+                                            <div className="reflection-category-author">
+
+                                                <span />
+
+                                                <div>
+
+                                                    <small>
+                                                        REFLECTION BY
+                                                    </small>
+
+                                                    <strong>
+                                                        {reflection.author}
+                                                    </strong>
+
+                                                </div>
+
+                                            </div>
+
+
+                                            <Link
+                                                to={`/insights/reflections/${reflection.category}/${reflection.id}`}
+                                                className="reflection-category-read"
+                                            >
+
+                                                <span>
+                                                    Read reflection
+                                                </span>
+
+                                                <ArrowRight
+                                                    size={17}
+                                                />
+
+                                            </Link>
+
+                                        </div>
+
+                                    </article>
+
+                                )
+                            )}
+
+                        </div>
+
+                    ) : (
+
+                        /* =================================================
+                           EMPTY STATE
+                        ================================================= */
+
+                        <div className="reflection-category-empty">
+
+                            <Quote size={40} />
+
+                            <span>
+                                MORE REFLECTIONS COMING SOON
+                            </span>
+
+                            <h3>
+                                There is more to sit with.
+                            </h3>
+
+                            <p>
+                                We're preparing more reflections
+                                for this category.
+                            </p>
+
+                        </div>
+
+                    )}
 
                 </div>
 
-
-                {categoryReflections.length > 0 ? (
-
-                    <div className="insight-reflection-list">
-
-                        {categoryReflections.map(
-                            (reflection, index) => (
-
-                                <article
-                                    key={reflection.id}
-                                    className="insight-reflection-card"
-                                >
-
-                                    <div className="insight-reflection-number">
-                                        {String(index + 1).padStart(2, "0")}
-                                    </div>
+            </section>
 
 
-                                    <div className="insight-reflection-content">
+            {/* =================================================
+                OTHER CATEGORIES
+            ================================================= */}
 
-                                        <span>
-                                            REFLECTION
-                                        </span>
+            <section className="reflection-category-other">
 
-                                        <blockquote>
-                                            “{reflection.quote}”
-                                        </blockquote>
-
-                                        <p>
-                                            — {reflection.author}
-                                        </p>
-
-                                    </div>
+                <div className="reflection-category-container">
 
 
-                                    <div className="insight-reflection-mark">
-                                        <ArrowRight size={21} />
-                                    </div>
-
-                                </article>
-
-                            )
-                        )}
-
-                    </div>
-
-                ) : (
-
-                    <div className="insight-category-no-content">
+                    <div className="reflection-category-other-heading">
 
                         <span>
-                            COMING SOON
+                            CONTINUE EXPLORING
                         </span>
 
                         <h2>
-                            More reflections are on the way.
+                            More perspectives
+                            <br />
+                            <em>to sit with.</em>
                         </h2>
-
-                        <p>
-                            We're preparing more reflections for this category.
-                        </p>
 
                     </div>
 
-                )}
+
+                    <div className="reflection-category-other-list">
+
+                        {reflectionCategories
+                            .filter(
+                                (item) =>
+                                    item.id !== category
+                            )
+                            .slice(0, 3)
+                            .map(
+                                (item) => (
+
+                                    <Link
+                                        key={item.id}
+                                        to={`/insights/reflections/${item.id}`}
+                                        className="reflection-category-other-card"
+                                    >
+
+                                        <div>
+
+                                            <span>
+                                                {item.number}
+                                            </span>
+
+                                            <h3>
+                                                {item.title}
+                                            </h3>
+
+                                            <p>
+                                                {item.description}
+                                            </p>
+
+                                        </div>
+
+
+                                        <ArrowRight
+                                            size={19}
+                                        />
+
+                                    </Link>
+
+                                )
+                            )}
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            {/* =================================================
+                BOTTOM NAVIGATION
+            ================================================= */}
+
+            <section className="reflection-category-navigation">
+
+                <div className="reflection-category-container">
+
+                    <Link
+                        to="/insights/reflections"
+                    >
+
+                        <ArrowLeft size={17} />
+
+                        <span>
+                            All Reflections
+                        </span>
+
+                    </Link>
+
+
+                    <Link
+                        to="/insights"
+                    >
+
+                        <span>
+                            Explore Insights
+                        </span>
+
+                        <ArrowRight size={17} />
+
+                    </Link>
+
+                </div>
 
             </section>
 
         </main>
     );
 }
+
 
 export default ReflectionCategory;

@@ -1,0 +1,791 @@
+/* =========================================================
+   REFLECTION DETAIL
+========================================================= */
+
+.reflection-detail-page {
+    width: 100%;
+    min-height: 100vh;
+
+    color: #102d4a;
+    margin-top:92px;
+    background: #ffffff;
+
+    overflow: hidden;
+}
+
+
+.reflection-detail-container {
+    width: min(1120px,
+            calc(100% - 80px));
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.reflection-detail-hero {
+    position: relative;
+
+    padding: 42px 0 110px;
+
+    background:
+        radial-gradient(circle at 88% 15%,
+            rgba(212, 175, 55, 0.13),
+            transparent 27%),
+        linear-gradient(135deg,
+            #ffffff 0%,
+            #fcfbf7 65%,
+            #f7f1df 100%);
+
+    border-bottom: 1px solid #e2e7e8;
+}
+
+
+.reflection-detail-back {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #708393;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.reflection-detail-back:hover {
+    color: #102d4a;
+
+    transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   EYEBROW
+========================================================= */
+
+.reflection-detail-eyebrow {
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top: 65px;
+
+    color: #b58a14;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.18em;
+}
+
+
+.reflection-detail-eyebrow i {
+    width: 38px;
+
+    height: 1px;
+
+    background: #d4af37;
+}
+
+
+/* =========================================================
+   CATEGORY
+========================================================= */
+
+.reflection-detail-category {
+    margin-top: 22px;
+
+    color: #8393a0;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.12em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.reflection-detail-quote-wrap {
+    position: relative;
+
+    max-width: 960px;
+
+    margin: 48px auto 0;
+
+    padding-left: 30px;
+}
+
+
+.reflection-detail-quote-icon {
+    position: absolute;
+
+    top: -18px;
+
+    left: -5px;
+
+    color: #d4af37;
+
+    opacity: 0.2;
+}
+
+
+.reflection-detail-quote-wrap blockquote {
+    position: relative;
+
+    z-index: 2;
+
+    margin: 0;
+
+    color: #102d4a;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(38px,
+            5vw,
+            65px);
+
+    line-height: 1.2;
+
+    letter-spacing: -0.045em;
+
+    font-style: italic;
+}
+
+
+/* =========================================================
+   AUTHOR
+========================================================= */
+
+.reflection-detail-author {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    margin-top: 45px;
+}
+
+
+.reflection-detail-author>span {
+    width: 38px;
+
+    height: 1px;
+
+    background: #d4af37;
+}
+
+
+.reflection-detail-author small {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #8b9aa5;
+
+    font-size: 7px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.reflection-detail-author strong {
+    display: block;
+
+    color: #102d4a;
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.reflection-detail-content {
+    padding: 105px 0;
+
+    background: #ffffff;
+}
+
+
+.reflection-detail-content-grid {
+    display: grid;
+
+    grid-template-columns:
+        0.35fr 0.65fr;
+
+    gap: 80px;
+}
+
+
+/* =========================================================
+   CONTENT LABEL
+========================================================= */
+
+.reflection-detail-content-label {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 15px;
+
+    padding-top: 8px;
+}
+
+
+.reflection-detail-content-label span {
+    color: #b58a14;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.16em;
+}
+
+
+.reflection-detail-content-label div {
+    width: 40px;
+
+    height: 1px;
+
+    margin-top: 5px;
+
+    background: #d4af37;
+}
+
+
+/* =========================================================
+   CONTENT COPY
+========================================================= */
+
+.reflection-detail-copy {
+    max-width: 690px;
+}
+
+
+.reflection-detail-copy h2 {
+    margin: 0 0 35px;
+
+    color: #102d4a;
+
+    font-size: 44px;
+
+    line-height: 1.05;
+
+    letter-spacing: -0.045em;
+}
+
+
+.reflection-detail-copy h2 em {
+    color: #c49b24;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-weight: 400;
+}
+
+
+.reflection-detail-copy p {
+    max-width: 650px;
+
+    margin: 0 0 22px;
+
+    color: #64798a;
+
+    font-size: 16px;
+
+    line-height: 1.9;
+}
+
+
+/* =========================================================
+   MORE REFLECTIONS
+========================================================= */
+
+.reflection-detail-more {
+    padding: 100px 0 110px;
+
+    background: #f7f8f7;
+
+    border-top: 1px solid #e2e7e8;
+}
+
+
+.reflection-detail-more-heading {
+    margin-bottom: 45px;
+}
+
+
+.reflection-detail-more-heading>span {
+    display: block;
+
+    margin-bottom: 13px;
+
+    color: #b58a14;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.17em;
+}
+
+
+.reflection-detail-more-heading h2 {
+    margin: 0;
+
+    color: #102d4a;
+
+    font-size: 42px;
+
+    line-height: 1;
+
+    letter-spacing: -0.045em;
+}
+
+
+.reflection-detail-more-heading em {
+    color: #c49b24;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   MORE GRID
+========================================================= */
+
+.reflection-detail-more-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+
+.reflection-detail-more-card {
+    min-height: 300px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 32px;
+
+    color: inherit;
+
+    text-decoration: none;
+
+    background: #ffffff;
+
+    border: 1px solid #e0e6e7;
+
+    border-radius: 10px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.reflection-detail-more-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #d4af37;
+
+    box-shadow:
+        0 20px 45px rgba(16,
+            45,
+            74,
+            0.07);
+}
+
+
+.reflection-detail-more-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.reflection-detail-more-top span {
+    color: #b58a14;
+
+    font-size: 9px;
+
+    font-weight: 800;
+}
+
+
+.reflection-detail-more-top svg {
+    color: #d4af37;
+
+    opacity: 0.6;
+}
+
+
+.reflection-detail-more-card blockquote {
+    margin: 30px 0;
+
+    color: #102d4a;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+
+    line-height: 1.45;
+
+    font-style: italic;
+}
+
+
+.reflection-detail-more-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-top: 18px;
+
+    border-top: 1px solid #e1e6e7;
+}
+
+
+.reflection-detail-more-footer span {
+    color: #728595;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.08em;
+}
+
+
+.reflection-detail-more-footer svg {
+    color: #102d4a;
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.reflection-detail-more-card:hover .reflection-detail-more-footer svg {
+    transform: translateX(5px);
+}
+
+
+/* =========================================================
+   BOTTOM NAVIGATION
+========================================================= */
+
+.reflection-detail-navigation {
+    padding: 32px 0;
+
+    background: #102d4a;
+}
+
+
+.reflection-detail-navigation .reflection-detail-container {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.reflection-detail-navigation a {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.reflection-detail-navigation a:hover {
+    color: #d4af37;
+}
+
+
+.reflection-detail-navigation a:first-child:hover {
+    transform: translateX(-3px);
+}
+
+
+.reflection-detail-navigation a:last-child:hover {
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   NOT FOUND
+========================================================= */
+
+.reflection-detail-not-found {
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    background:
+        linear-gradient(135deg,
+            #ffffff,
+            #f7f1df);
+}
+
+
+.reflection-detail-not-found>span {
+    color: #b58a14;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    letter-spacing: 0.17em;
+}
+
+
+.reflection-detail-not-found h1 {
+    margin: 16px 0 10px;
+
+    color: #102d4a;
+
+    font-size: 48px;
+
+    letter-spacing: -0.05em;
+}
+
+
+.reflection-detail-not-found p {
+    max-width: 430px;
+
+    margin: 0 0 25px;
+
+    color: #718497;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+}
+
+
+.reflection-detail-back-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding: 12px 18px;
+
+    color: #ffffff;
+
+    background: #102d4a;
+
+    border-radius: 6px;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 800;
+}
+
+
+.reflection-detail-back-button:hover {
+    background: #173b5e;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .reflection-detail-container {
+        width: min(calc(100% - 50px),
+                700px);
+    }
+
+
+    .reflection-detail-content-grid {
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+    }
+
+
+    .reflection-detail-more-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .reflection-detail-container {
+        width: calc(100% - 30px);
+    }
+
+
+    .reflection-detail-hero {
+        padding: 28px 0 75px;
+    }
+
+
+    .reflection-detail-eyebrow {
+        margin-top: 48px;
+    }
+
+
+    .reflection-detail-quote-wrap {
+        margin-top: 40px;
+
+        padding-left: 0;
+    }
+
+
+    .reflection-detail-quote-icon {
+        top: -25px;
+
+        left: -8px;
+
+        width: 48px;
+
+        height: 48px;
+    }
+
+
+    .reflection-detail-quote-wrap blockquote {
+        font-size: 35px;
+
+        line-height: 1.25;
+    }
+
+
+    .reflection-detail-author {
+        margin-top: 35px;
+    }
+
+
+    .reflection-detail-content {
+        padding: 70px 0 75px;
+    }
+
+
+    .reflection-detail-copy h2 {
+        font-size: 35px;
+    }
+
+
+    .reflection-detail-copy p {
+        font-size: 15px;
+
+        line-height: 1.8;
+    }
+
+
+    .reflection-detail-more {
+        padding: 70px 0 75px;
+    }
+
+
+    .reflection-detail-more-heading h2 {
+        font-size: 35px;
+    }
+
+
+    .reflection-detail-more-card {
+        min-height: 280px;
+
+        padding: 25px;
+    }
+
+
+    .reflection-detail-more-card blockquote {
+        font-size: 22px;
+    }
+
+
+    .reflection-detail-navigation .reflection-detail-container {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .reflection-detail-navigation a:last-child {
+        align-self: flex-end;
+    }
+
+
+    .reflection-detail-not-found h1 {
+        font-size: 38px;
+    }
+
+}

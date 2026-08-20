@@ -1,33 +1,225 @@
 import {
     ArrowLeft,
     ArrowRight,
-    Users,
-    Target,
-    UsersRound,
-    Building2,
-    TrendingUp,
+    Play,
+    Search,
+    PlayCircle,
 } from "lucide-react";
-
+import { useState } from "react";
+import YouTubeModal from "../../components/insights/YouTubeModal";
 import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
-import { videoCategories } from "../../data/insightsData";
-import "../../styles/insight-library.css";
+import {
+    videoCategories,
+    videos,
+} from "../../data/insightsData";
+
+import "../../styles/video-library.css";
 
 
 /* =========================================================
-   CATEGORY ICONS
+   FEATURED VIDEO
 ========================================================= */
 
-const categoryIcons = {
-    "leadership-voices": Users,
-    "skills-to-improve": Target,
-    "strong-teams": UsersRound,
-    "teams-culture": UsersRound,
-    "business-growth": TrendingUp,
-    organisation: Building2,
-    "growth-performance": TrendingUp,
-};
+function FeaturedVideo({ video }) {
+
+    if (!video) return null;
+
+    return (
+        <article className="video-library-featured">
+
+            <div className="video-library-featured-media">
+
+                <img
+                    src={video.image}
+                    alt={video.title}
+                />
+
+                <div className="video-library-featured-overlay" />
+
+                <div className="video-library-featured-play">
+                    <Play
+                        size={27}
+                        fill="currentColor"
+                        strokeWidth={0}
+                    />
+                </div>
+
+                <span className="video-library-featured-duration">
+                    {video.duration}
+                </span>
+
+            </div>
+
+
+            <div className="video-library-featured-info">
+
+                <div className="video-library-featured-label">
+                    FEATURED VIDEO
+                </div>
+
+                <h2>
+                    {video.title}
+                </h2>
+
+                <p>
+                    {video.description}
+                </p>
+
+                <button
+                    // to={`/insights/videos/${video.category}/${video.id}`}
+                    className="video-library-featured-button"
+                    onClick={() => setSelectedVideo(featuredVideo)}
+                >
+                    <span>Watch Video</span>
+
+                    <ArrowRight size={18} />
+                </button>
+
+            </div>
+
+        </article>
+    );
+}
+
+
+/* =========================================================
+   CATEGORY CARD
+========================================================= */
+
+function CategoryCard({ category }) {
+
+    const categoryVideos = videos.filter(
+        (video) => video.category === category.id
+    );
+
+    return (
+        <Link
+            to={`/insights/videos/${category.id}`}
+            className="video-library-category-card"
+        >
+
+            <div className="video-library-category-top">
+
+                <span className="video-library-category-number">
+                    {category.number}
+                </span>
+
+                {/* <div className="video-library-category-icon">
+                    <PlayCircle
+                        size={25}
+                        strokeWidth={1.8}
+                    />
+                </div> */}
+
+            </div>
+
+
+            <div className="video-library-category-body">
+
+                <h3>
+                    {category.title}
+                </h3>
+
+                <p>
+                    {category.description}
+                </p>
+
+            </div>
+
+
+            <div className="video-library-category-footer">
+
+                <span>
+                    {categoryVideos.length}{" "}
+                    {categoryVideos.length === 1
+                        ? "Video"
+                        : "Videos"}
+                </span>
+
+                <span className="video-library-explore">
+                    Explore
+                    <ArrowRight size={17} />
+                </span>
+
+            </div>
+
+        </Link>
+    );
+}
+
+
+/* =========================================================
+   VIDEO CARD
+========================================================= */
+
+function VideoCard({ video }) {
+
+    return (
+        <article className="video-library-card">
+
+            <Link
+                to={`/insights/videos/${video.category}/${video.id}`}
+                className="video-library-card-media"
+            >
+
+                <img
+                    src={video.image}
+                    alt={video.title}
+                />
+
+                <div className="video-library-card-overlay" />
+
+                <div className="video-library-card-play">
+                    <Play
+                        size={20}
+                        fill="currentColor"
+                        strokeWidth={0}
+                    />
+                </div>
+
+                <span className="video-library-card-duration">
+                    {video.duration}
+                </span>
+
+            </Link>
+
+
+            <div className="video-library-card-content">
+
+                <span className="video-library-card-category">
+                    {video.category}
+                </span>
+
+                <Link
+                    to={`/insights/videos/${video.category}/${video.id}`}
+                >
+                    <h3>
+                        {video.title}
+                    </h3>
+                </Link>
+
+
+                <p>
+                    {video.description}
+                </p>
+
+
+                <Link
+                    to={`/insights/videos/${video.category}/${video.id}`}
+                    className="video-library-card-link"
+                >
+                    Watch
+
+                    <ArrowRight size={17} />
+                </Link>
+
+            </div>
+
+        </article>
+    );
+}
 
 
 /* =========================================================
@@ -46,184 +238,248 @@ function VideoLibrary() {
 
     }, []);
 
+const featuredVideo = videos.find(
+    (video) => video.featured
+);
+const [selectedVideo, setSelectedVideo] = useState(null);
+
+const latestVideos = videos.filter(
+    (video) => !video.featured
+);
+
 
     return (
 
-        <main className="insight-library-page">
+        <main className="video-library-page">
 
 
             {/* =================================================
                 HERO
             ================================================= */}
 
-            <section className="insight-library-header">
+            <section className="video-library-hero">
 
-                <div className="insight-library-eyebrow">
-                    <span>VIDEOS</span>
-                </div>
-
-
-                <div className="insight-library-hero-card">
+                <div className="video-library-hero-decoration video-library-hero-decoration-one" />
+                <div className="video-library-hero-decoration video-library-hero-decoration-two" />
 
 
-                    {/* BACK */}
+                <div className="video-library-hero-container">
+
+
+                    {/* Back */}
 
                     <Link
                         to="/insights"
-                        className="insight-library-back-link"
+                        className="video-library-back"
                     >
-
-                        <ArrowLeft size={19} />
+                        <ArrowLeft size={18} />
 
                         <span>
                             Back to Insights
                         </span>
-
                     </Link>
 
 
-                    {/* HERO TITLE */}
-
-                    <div className="insight-library-heading-wrap">
-
-                        <h1>
-                            Ideas worth
-                            <br />
-
-                            <span>
-                                watching.
-                            </span>
-
-                        </h1>
-
-                    </div>
+                    <div className="video-library-hero-grid">
 
 
-                    {/* HERO DESCRIPTION */}
+                        {/* LEFT */}
 
-                    <div className="insight-library-intro">
+                        <div className="video-library-hero-content">
 
-                        <p>
-                            Conversations, practical frameworks and
-                            leadership ideas designed to help people
-                            and organisations grow.
-                        </p>
+                            <div className="video-library-eyebrow">
+
+                                <PlayCircle
+                                    size={18}
+                                    strokeWidth={1.8}
+                                />
+
+                                <span>
+                                    VIDEO LIBRARY
+                                </span>
+
+                            </div>
+
+
+                            <h1>
+
+                                Ideas.
+                                <br />
+
+                                <span>
+                                    Insights.
+                                </span>
+
+                                <br />
+
+                                Perspectives.
+
+                            </h1>
+
+
+                            <p>
+
+                                Explore conversations, practical
+                                frameworks and leadership ideas designed
+                                to help people and organisations grow.
+
+                            </p>
+
+
+                            {/* Search */}
+
+                            <div className="video-library-search">
+
+                                <Search size={20} />
+
+                                <input
+                                    type="text"
+                                    placeholder="Search videos by topic, title or keyword..."
+                                    aria-label="Search videos"
+                                />
+
+                            </div>
+
+                        </div>
+
+
+                        {/* RIGHT */}
+
+                        <div className="video-library-hero-featured"
+                        onClick={() => setSelectedVideo(featuredVideo)}>
+
+                            <FeaturedVideo
+                                video={featuredVideo}
+                            />
+
+                        </div>
 
                     </div>
 
                 </div>
 
             </section>
-
 
 
             {/* =================================================
-                VIDEO CATEGORIES
+                CATEGORIES
             ================================================= */}
 
-            <section className="insight-library-category-section">
+            <section className="video-library-categories">
+
+                <div className="video-library-container">
 
 
-                {/* SECTION HEADING */}
+                    <div className="video-library-section-heading">
 
-                <div className="insight-library-category-heading">
+                        <div>
 
-                    <span>
-                        EXPLORE BY CATEGORY
-                    </span>
+                            <span className="video-library-section-eyebrow">
+                                EXPLORE BY CATEGORY
+                            </span>
 
-                </div>
+                            <h2>
+                                Browse videos by what
+                                <br />
+                                interests you.
+                            </h2>
 
-
-
-                {/* CATEGORY CARDS */}
-
-                <div className="insight-library-category-list">
-
-                    {videoCategories.map((category, index) => {
-
-                        const Icon =
-                            categoryIcons[category.id] || Users;
+                        </div>
 
 
-                        return (
+                        {/* <Link
+                            to="/insights/videos"
+                            className="video-library-view-all"
+                        >
+                            <span>
+                                View All Videos
+                            </span>
 
-                            <Link
+                            <ArrowRight size={18} />
+
+                        </Link> */}
+
+                    </div>
+
+
+                    <div className="video-library-category-grid">
+
+                        {videoCategories.map((category) => (
+
+                            <CategoryCard
                                 key={category.id}
-                                to={`/insights/videos/${category.id}`}
-                                className="insight-library-category-row"
-                            >
+                                category={category}
+                            />
 
+                        ))}
 
-                                {/* NUMBER */}
-
-                                <div className="insight-library-category-number">
-
-                                    {category.number ||
-                                        String(index + 1).padStart(2, "0")}
-
-                                </div>
-
-
-
-                                {/* ICON */}
-
-                                <div className="insight-library-category-icon">
-
-                                    <Icon
-                                        size={27}
-                                        strokeWidth={1.8}
-                                    />
-
-                                </div>
-
-
-
-                                {/* CONTENT */}
-
-                                <div className="insight-library-category-content">
-
-                                    <div className="insight-library-category-label">
-                                        VIDEO SERIES
-                                    </div>
-
-                                    <h2>
-                                        {category.title}
-                                    </h2>
-
-                                    <p>
-                                        {category.description}
-                                    </p>
-
-                                </div>
-
-
-
-                                {/* ARROW */}
-
-                                <div className="insight-library-category-arrow">
-
-                                    <ArrowRight
-                                        size={25}
-                                    />
-
-                                </div>
-
-
-                            </Link>
-
-                        );
-
-                    })}
+                    </div>
 
                 </div>
 
             </section>
 
+
+            {/* =================================================
+                LATEST VIDEOS
+            ================================================= */}
+
+            {/* <section className="video-library-latest">
+
+                <div className="video-library-container">
+
+
+                    <div className="video-library-latest-heading">
+
+                        <div>
+
+                            <span className="video-library-section-eyebrow">
+                                LATEST VIDEOS
+                            </span>
+
+                            <h2>
+                                Watch something
+                                <span>
+                                    worth your time.
+                                </span>
+                            </h2>
+
+                        </div>
+
+
+                        <span className="video-library-video-count">
+                            {videos.length} VIDEOS
+                        </span>
+
+                    </div>
+
+
+                    <div className="video-library-video-grid">
+
+                        {latestVideos.map((video) => (
+
+                            <VideoCard
+                                key={video.id}
+                                video={video}
+                            />
+
+                        ))}
+
+                    </div>
+
+                </div>
+
+            </section> */}
+
+<YouTubeModal
+    isOpen={Boolean(selectedVideo)}
+    videoUrl={selectedVideo?.youtubeUrl}
+    title={selectedVideo?.title}
+    onClose={() => setSelectedVideo(null)}
+/>
 
         </main>
     );
 }
-
 
 export default VideoLibrary;

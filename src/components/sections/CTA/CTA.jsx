@@ -1,8 +1,9 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import "./cta.css";
-
+import { useContact } from "../../sections/Contact/ContactContext";
 const CTA = () => {
+    const { openModal } = useContact();
     return (
         <section className="cta-section">
             <div className="cta-container">
@@ -28,7 +29,7 @@ const CTA = () => {
                         or your organisation, let's explore what's possible.
                     </p>
 
-                    <a
+                    {/* <a
                         href="#conversation"
                         className="cta-button"
                     >
@@ -38,7 +39,14 @@ const CTA = () => {
                             size={18}
                             strokeWidth={1.8}
                         />
-                    </a>
+                    </a> */}
+                    <button
+    type="button"
+    className="cta-button"
+    onClick={openModal}
+>
+    Let's Talk
+</button>
 
                 </div>
 

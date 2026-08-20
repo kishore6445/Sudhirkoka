@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import logo from "../../../assets/images/logo/logo.png";
 import Button from "../../common/Button/Button";
-
+import { useContact } from "../../sections/Contact/ContactContext";
 import "./Navbar.css";
 
 const navLinks = [
@@ -12,8 +12,8 @@ const navLinks = [
         href: "#home",
     },
     {
-        label: "About",
-        href: "#about",
+        label: "Insights",
+        href: "#insights",
     },
     {
         label: "Challenges",
@@ -27,13 +27,15 @@ const navLinks = [
         label: "Services",
         href: "#services",
     },
-    {
-        label: "Insights",
-        href: "#insights",
+     {
+        label: "About",
+        href: "#about",
     },
+   
 ];
 
 function Navbar({ light = false }) {
+    const { openModal } = useContact();
     const location = useLocation();
     const isHome = location.pathname === "/";
     const sectionHref = (href) => isHome ? href : `/${href}`;
@@ -129,16 +131,16 @@ function Navbar({ light = false }) {
                     <div className="navbar__actions">
 
                         <Button
-                            variant={
-                                isScrolled
-                                    ? "dark"
-                                    : "primary"
-                            }
-                            href={sectionHref("#contact")}
-                            className="navbar__cta"
-                        >
-                            Let's Talk
-                        </Button>
+    variant={
+        isScrolled
+            ? "dark"
+            : "primary"
+    }
+    className="navbar__cta"
+    onClick={openModal}
+>
+    Let's Talk
+</Button>
 
                     </div>
 
@@ -226,13 +228,15 @@ function Navbar({ light = false }) {
                     <div className="mobile-menu__footer">
 
                         <Button
-                            variant="dark"
-                            href={sectionHref("#contact")}
-                            className="mobile-menu__cta"
-                            onClick={closeMenu}
-                        >
-                            Let's Talk
-                        </Button>
+    variant="dark"
+    className="mobile-menu__cta"
+    onClick={() => {
+        closeMenu();
+        openModal();
+    }}
+>
+    Let's Talk
+</Button>
 
                     </div>
 

@@ -20,7 +20,7 @@ const FrameworkStep = ({ item, isLast }) => {
   const Icon = item.icon;
 
   return (
-    <div className="framework-step">
+    <div className="framework-step" >
 
       <div className="framework-step__visual">
 
@@ -106,7 +106,7 @@ const ApproachStep = ({ item, isLast }) => {
 
 const Framework = () => {
   return (
-    <section className="framework-section">
+    <section className="framework-section" id = "framework">
 
       <div className="framework-container">
 

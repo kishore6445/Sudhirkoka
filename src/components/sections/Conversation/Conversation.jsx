@@ -1,7 +1,7 @@
 import React from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import "./conversation.css";
-
+import { useContact } from "../../sections/Contact/ContactContext";
 const questions = [
   {
     number: "01",
@@ -20,9 +20,10 @@ const questions = [
 const Conversation = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-
+    
     // Connect your form submission logic here later.
   };
+  const { openModal } = useContact();
 
   return (
     <section className="conversation-section">
@@ -65,11 +66,11 @@ const Conversation = () => {
                   {question.text}
                 </span>
 
-                <ArrowUpRight
+                {/* <ArrowUpRight
                   className="conversation-question-arrow"
                   size={20}
                   strokeWidth={1.8}
-                />
+                /> */}
 
               </div>
             ))}
@@ -82,10 +83,10 @@ const Conversation = () => {
               Have another question?
             </span>
 
-            <button type="button">
+            <span>
               Ask us directly
-              <ArrowRight size={17} strokeWidth={1.8} />
-            </button>
+              <ArrowRight size={17} strokeWidth={2.8} />
+            </span>
 
           </div>
 
@@ -177,7 +178,8 @@ const Conversation = () => {
 
 
             <button
-              type="submit"
+              type= "button"
+              onClick={openModal}
               className="conversation-submit"
             >
               <span>Send Enquiry</span>

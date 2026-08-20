@@ -1,19 +1,37 @@
-import { ArrowLeft, ArrowRight } from "lucide-react";
-import { Link, useParams } from "react-router-dom";
-import { useEffect } from "react";
+import {
+    ArrowLeft,
+    ArrowRight,
+} from "lucide-react";
+
+import {
+    Link,
+    useParams,
+} from "react-router-dom";
+
+import {
+    useEffect,
+} from "react";
 
 import {
     articleCategories,
     articles,
 } from "../../data/insightsData";
 
-import "../../styles/insight-library.css";
+import ArticleCard from "../../components/insights/ArticleCard";
+
+import "../../styles/article-category.css";
 
 
 function ArticleCategory() {
 
-    const { category } = useParams();
+    const {
+        category,
+    } = useParams();
 
+
+    /* =========================================================
+       SCROLL TO TOP
+    ========================================================= */
 
     useEffect(() => {
 
@@ -26,217 +44,390 @@ function ArticleCategory() {
     }, [category]);
 
 
-    const currentCategory = articleCategories.find(
-        (item) => item.id === category
-    );
+    /* =========================================================
+       CURRENT CATEGORY
+    ========================================================= */
+
+    const currentCategory =
+        articleCategories.find(
+            (item) => item.id === category
+        );
 
 
-    const categoryArticles = articles.filter(
-        (article) => article.category === category
-    );
+    /* =========================================================
+       CATEGORY ARTICLES
+    ========================================================= */
+
+    const categoryArticles =
+        articles.filter(
+            (article) =>
+                article.category === category
+        );
 
 
-    /* =========================================
-       INVALID CATEGORY
-    ========================================= */
+    /* =========================================================
+       CATEGORY NOT FOUND
+    ========================================================= */
 
     if (!currentCategory) {
 
         return (
-            <main className="insight-category-page">
 
-                <section className="insight-category-empty">
+            <main className="article-category-page">
+
+                <section className="article-category-not-found">
 
                     <span>
-                        ARTICLES
+                        ARTICLE LIBRARY
                     </span>
 
                     <h1>
                         Category not found.
                     </h1>
 
+                    <p>
+                        The article category you're looking for
+                        doesn't exist.
+                    </p>
+
                     <Link
                         to="/insights/articles"
-                        className="insight-category-back"
+                        className="article-category-back-button"
                     >
-                        <ArrowLeft size={19} />
-                        Back to Articles
+
+                        <ArrowLeft size={17} />
+
+                        Back to Article Library
+
                     </Link>
 
                 </section>
 
             </main>
+
         );
     }
 
 
+    /* =========================================================
+       FEATURED + REMAINING
+    ========================================================= */
+
+    const featuredArticle =
+        categoryArticles[0];
+
+
+    const remainingArticles =
+        categoryArticles.slice(1);
+
+
     return (
-        <main className="insight-category-page">
+
+        <main className="article-category-page">
 
 
-            {/* =========================================
-                HERO
-            ========================================= */}
+            {/* =================================================
+                TOP NAVIGATION
+            ================================================= */}
 
-            <section className="insight-category-hero">
+            <section className="article-category-top">
 
-                <div className="insight-category-decoration" />
+                <div className="article-category-container">
+
+                    {/* Back */}
+
+                    <Link
+                        to="/insights/articles"
+                        className="article-category-back"
+                    >
+
+                        <ArrowLeft size={17} />
+
+                        <span>
+                            Back to Article Library
+                        </span>
+
+                    </Link>
 
 
-                <Link
-                    to="/insights/articles"
-                    className="insight-category-back"
-                >
-                    <ArrowLeft size={20} />
+                    {/* Category Navigation */}
 
-                    <span>
-                        Back to Articles
-                    </span>
-                </Link>
+                    <nav className="article-category-nav">
+
+                        {articleCategories.map(
+                            (item) => (
+
+                                <Link
+                                    key={item.id}
+                                    to={`/insights/articles/${item.id}`}
+                                    className={
+                                        item.id === category
+                                            ? "active"
+                                            : ""
+                                    }
+                                >
+
+                                    {item.title}
+
+                                </Link>
+
+                            )
+                        )}
+
+                    </nav>
+
+                </div>
+
+            </section>
 
 
-                <div className="insight-category-hero-content">
+            {/* =================================================
+                FEATURED ARTICLE — HERO
+            ================================================= */}
 
-                    <div>
+            {featuredArticle && (
 
-                        <div className="insight-category-eyebrow">
+                <section className="article-category-featured">
+
+                    <div className="article-category-container">
+
+
+                        {/* Section Heading */}
+
+                        <div className="article-category-section-heading">
 
                             <span>
-                                03
+                                START HERE
                             </span>
 
-                            <i />
-
-                            <span>
-                                ARTICLES
-                            </span>
+                            <h1>
+                                A perspective worth
+                                <br />
+                                <span>
+                                    spending time with.
+                                </span>
+                            </h1>
 
                         </div>
 
 
-                        <h1>
+                        {/* Featured Article */}
 
-                            {currentCategory.title}
+                        <article className="article-category-featured-card">
 
-                            <br />
+
+                            {/* IMAGE */}
+
+                            <Link
+                                to={`/insights/articles/${category}/${featuredArticle.id}`}
+                                className="article-category-featured-image"
+                            >
+
+                                <img
+                                    src={featuredArticle.image}
+                                    alt={featuredArticle.title}
+                                />
+
+                                <div className="article-category-featured-overlay" />
+
+                                <div className="article-category-featured-badge">
+
+                                    <span>
+                                        FEATURED ARTICLE
+                                    </span>
+
+                                    <ArrowRight size={18} />
+
+                                </div>
+
+                            </Link>
+
+
+                            {/* CONTENT */}
+
+                            <div className="article-category-featured-content">
+
+                                <span className="article-category-featured-meta">
+                                    {featuredArticle.readTime}
+                                </span>
+
+
+                                <h2>
+                                    {featuredArticle.title}
+                                </h2>
+
+
+                                <p>
+                                    {featuredArticle.excerpt}
+                                </p>
+
+
+                                <Link
+                                    to={`/insights/articles/${category}/${featuredArticle.id}`}
+                                    className="article-category-read"
+                                >
+
+                                    <span>
+                                        Read article
+                                    </span>
+
+                                    <ArrowRight size={17} />
+
+                                </Link>
+
+                            </div>
+
+                        </article>
+
+
+                        {/* Small category information */}
+
+                        <div className="article-category-featured-footer">
+
+                            <div className="article-category-count">
+
+                                <strong>
+                                    {categoryArticles.length}
+                                </strong>
+
+                                <span>
+                                    {categoryArticles.length === 1
+                                        ? "ARTICLE"
+                                        : "ARTICLES"
+                                    }
+                                </span>
+
+                            </div>
+
+
+                            <p>
+                                {currentCategory.description}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            )}
+
+
+            {/* =================================================
+                MORE ARTICLES
+            ================================================= */}
+
+            <section className="article-category-more">
+
+                <div className="article-category-container">
+
+
+                    <div className="article-category-more-heading">
+
+                        <div>
 
                             <span>
-                                Ideas worth exploring.
+                                MORE FROM THIS CATEGORY
                             </span>
 
-                        </h1>
+                            <h2>
+                                Keep exploring.
+                            </h2>
+
+                        </div>
+
+
+                        <span>
+                            {categoryArticles.length} ARTICLES
+                        </span>
 
                     </div>
 
 
-                    <div className="insight-category-intro">
+                    {remainingArticles.length > 0 ? (
 
-                        <p>
-                            {currentCategory.description}
-                        </p>
+                        <div className="article-category-grid">
 
-                    </div>
+                            {remainingArticles.map(
+                                (article) => (
+
+                                    <ArticleCard
+                                        key={article.id}
+                                        article={article}
+                                    />
+
+                                )
+                            )}
+
+                        </div>
+
+                    ) : (
+
+                        <div className="article-category-empty">
+
+                            <span>
+                                MORE COMING SOON
+                            </span>
+
+                            <h3>
+                                More articles are on the way.
+                            </h3>
+
+                            <p>
+                                We're preparing more ideas
+                                for this category.
+                            </p>
+
+                        </div>
+
+                    )}
 
                 </div>
 
             </section>
 
 
-            {/* =========================================
-                ARTICLE LIST
-            ========================================= */}
+            {/* =================================================
+                BOTTOM NAVIGATION
+            ================================================= */}
 
-            <section className="insight-category-content">
+            <section className="article-category-bottom">
 
-                <div className="insight-category-section-heading">
+                <div className="article-category-container">
 
-                    <span>
-                        {categoryArticles.length}{" "}
-                        {categoryArticles.length === 1
-                            ? "ARTICLE"
-                            : "ARTICLES"}
-                    </span>
+                    <Link
+                        to="/insights/articles"
+                    >
 
-                    <div />
-
-                </div>
-
-
-                {categoryArticles.length > 0 ? (
-
-                    <div className="insight-article-list">
-
-                        {categoryArticles.map((article, index) => (
-
-                            <article
-                                key={article.id}
-                                className="insight-article-row"
-                            >
-
-                                <div className="insight-article-number">
-                                    {String(index + 1).padStart(2, "0")}
-                                </div>
-
-
-                                <div className="insight-article-info">
-
-                                    <span>
-                                        ARTICLE
-                                    </span>
-
-                                    <h2>
-                                        {article.title}
-                                    </h2>
-
-                                    <p>
-                                        {article.excerpt}
-                                    </p>
-
-                                    <small>
-                                        {article.readTime}
-                                    </small>
-
-                                </div>
-
-
-                                <button
-                                    type="button"
-                                    className="insight-article-arrow"
-                                    aria-label={`Read ${article.title}`}
-                                >
-                                    <ArrowRight size={22} />
-                                </button>
-
-                            </article>
-
-                        ))}
-
-                    </div>
-
-                ) : (
-
-                    <div className="insight-category-no-content">
+                        <ArrowLeft size={18} />
 
                         <span>
-                            COMING SOON
+                            Article Library
                         </span>
 
-                        <h2>
-                            More ideas are on the way.
-                        </h2>
+                    </Link>
 
-                        <p>
-                            We're preparing more articles for this category.
-                        </p>
 
-                    </div>
+                    <Link
+                        to="/insights"
+                    >
 
-                )}
+                        <span>
+                            Explore Insights
+                        </span>
+
+                        <ArrowRight size={18} />
+
+                    </Link>
+
+                </div>
 
             </section>
 
         </main>
+
     );
 }
+
 
 export default ArticleCategory;

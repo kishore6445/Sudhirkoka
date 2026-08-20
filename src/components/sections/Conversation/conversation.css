@@ -230,7 +230,7 @@
    DIRECT QUESTION
 ========================================================= */
 
-.conversation-direct {
+/* .conversation-direct {
     display: flex;
 
     align-items: center;
@@ -244,9 +244,9 @@
     font-size: 13px;
 
     color: #657987;
-}
+} */
 
-.conversation-direct button {
+.conversation-direct {
     display: inline-flex;
 
     align-items: center;
@@ -274,10 +274,20 @@
         gap 0.25s ease;
 }
 
-.conversation-direct button:hover {
-    color: #102a43;
-
-    gap: 10px;
+.conversation-direct span {
+    display: flex;
+    
+        align-items: center;
+    
+        gap: 18px;
+    
+        margin-top: 26px;
+    
+        font-family: "Manrope", sans-serif;
+    
+        font-size: 15px;
+    
+        color: #16587b;
 }
 
 
