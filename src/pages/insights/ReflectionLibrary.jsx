@@ -143,19 +143,19 @@ function ReflectionLibrary() {
                                 EXPLORE BY CATEGORY
                             </span>
 
-                            <h2>
+                            {/* <h2>
                                 Choose a thought
                                 <br />
                                 <em>to sit with.</em>
-                            </h2>
+                            </h2> */}
 
                         </div>
 
 
-                        <p>
+                        {/* <p>
                             Explore reflections across leadership,
                             people, growth and the realities of work.
-                        </p>
+                        </p> */}
 
                     </div>
 
